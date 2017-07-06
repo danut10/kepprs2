@@ -1,4 +1,4 @@
-package ro.kepler.kepres2.consola.alextoma;
+package ro.kepler.kepres2.web.alextoma;
 
 
 public class Bradulet {
@@ -13,7 +13,7 @@ public class Bradulet {
 	public void creareBrad() {
 
 		
-		mat = new byte[ 150 ][ 150 ];
+		mat = new byte[ 100 ][ 100 ];
 		for (ramura = 1; ramura <= n; ramura++) {
 			for (nivel = 1; nivel <= ramura + 1; nivel++) {
 				frunza = 0;
@@ -33,6 +33,12 @@ public class Bradulet {
 		mat[ lin ][ n + 1 ] = 1;
 		mat[ lin + 1 ][ n + 1 ] = 1;
 		
+	}
+	public byte[][] getMat(){
+		return mat;
+	}
+	public int getLin(){
+		return lin;
 	}
 
 
