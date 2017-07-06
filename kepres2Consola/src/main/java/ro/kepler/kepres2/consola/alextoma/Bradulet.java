@@ -35,10 +35,5 @@ public class Bradulet {
 		
 	}
 
-	public byte[][] getMat(){
-		return mat;
-	}
-	public int getLin(){
-		return lin;
-	}
+
 }
