@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page import="ro.kepler.kepprt.kepres2.app.alextoma.*" %>
+<%@ page import="ro.kepler.kepprt.app.alextoma.*" %>
 	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -18,7 +18,6 @@
 	
 	<div id="brad">
 	<% 
-	out.print("daaa");
 	int n=5;
 	Bradulet brad = new Bradulet(n);
 	brad.creareBrad();
