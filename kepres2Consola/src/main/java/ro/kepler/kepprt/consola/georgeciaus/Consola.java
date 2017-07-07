@@ -2,6 +2,8 @@ package ro.kepler.kepprt.consola.georgeciaus;
 
 import java.util.Scanner;
 
+import ro.kepler.kepprt.app.georgeciaus.Brad;
+
 public class Consola {
 	public int nrRamuri() {
 		Scanner s = new Scanner(System.in);
