@@ -5,10 +5,10 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>  
   <servlet-name>BradController</servlet-name>  
-  <servlet-class>ro.kepler.kepres2.web.ioana.BradController</servlet-class>  
+  <servlet-class>ro.kepler.kepres2.web.ioana.BradServlet</servlet-class>  
   </servlet>  
   <servlet-mapping>  
-  <servlet-name>BradController</servlet-name>  
-  <url-pattern>/BradController</url-pattern>  
+  <servlet-name>BradServlet</servlet-name>  
+  <url-pattern>/BradServlet</url-pattern>  
   </servlet-mapping>  
 </web-app>
