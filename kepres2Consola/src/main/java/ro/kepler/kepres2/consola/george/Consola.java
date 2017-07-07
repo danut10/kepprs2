@@ -13,7 +13,7 @@ public class Consola {
 	}
 
 	public void afisare(Brad b) {
-		for (int i = 0; i < b.nrLinii+2; i++) {
+		for (int i = 0; i < b.nrLinii + 2; i++) {
 			for (int j = 0; j < b.nrColoane; j++)
 				System.out.print(b.matrice[i][j]);
 			System.out.println();
