@@ -1,4 +1,4 @@
-package ro.kepler.kepres2.consola.george;
+package ro.kepler.kepprt.app.georgeciaus;
 
 public class Brad {
 	private int nrRamuri;

@@ -2,6 +2,8 @@ package ro.kepler.kepprt.consola.andrei;
 
 import java.util.Scanner;
 
+import ro.kepler.kepprt.app.andrei.Brad;
+
 public class Consola {
 	private char fg = '^';
 	private char bg = ' ';

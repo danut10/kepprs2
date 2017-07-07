@@ -1,6 +1,8 @@
-package ro.kepler.kepres2.consola.george;
+package ro.kepler.kepprt.consola.georgeciaus;
 
 import java.util.Scanner;
+
+import ro.kepler.kepprt.app.georgeciaus.Brad;
 
 public class Consola {
 	public int nrRamuri() {
