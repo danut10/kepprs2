@@ -1,4 +1,4 @@
-package ro.kepler.kepres2.consola.alextoma;
+package ro.kepler.kepprt.consola.alextoma;
 
 import java.util.Scanner;
 

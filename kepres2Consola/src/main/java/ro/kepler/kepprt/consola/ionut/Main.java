@@ -1,4 +1,4 @@
-package ro.kepler.kepres2.consola.ionut;
+package ro.kepler.kepprt.consola.ionut;
 
 public class Main {
 	public static void main(String[] args) {
