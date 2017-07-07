@@ -1,4 +1,4 @@
-package ro.kepler.kepprt.kepres2.app.alextoma;
+package ro.kepler.kepprt.app.alextoma;
 
 
 public class Bradulet {
