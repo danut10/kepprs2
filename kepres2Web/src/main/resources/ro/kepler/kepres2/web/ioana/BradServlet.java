@@ -19,21 +19,10 @@ public class BradServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)  
             throws ServletException, IOException {  
         response.setContentType("text/html");  
-        
-        
-        PrintWriter out=response.getWriter(); 
-        out.println("<html>");
-		out.println("<style>");
-		out.println("body {");
-		out.println("font-family: monospace;");
-		out.println("}");
-		out.println("</style");
-		out.println("<body>");
           
         int nrRamuri=Integer.parseInt(request.getParameter("nrRamuri"));  
-         
-          
         Brad brad = new Brad(nrRamuri);
+       
         char fg = '*';
         char bg = ' ';
         for (int i = 0; i < brad.linii + 2; i++) {
