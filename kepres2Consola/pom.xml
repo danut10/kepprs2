@@ -23,6 +23,13 @@
 		
 	<dependencies>
 
+		<!-- kepres2App -->
+		<dependency>
+			<groupId>ro.kepler</groupId>
+			<artifactId>kepres2App</artifactId>
+			<version>0.1</version>
+		</dependency>
+
 		<!-- commons-lang -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
