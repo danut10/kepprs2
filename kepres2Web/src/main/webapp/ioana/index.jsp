@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="BradController" method="post">  
+<form action="BradServlet" method="post">  
 Ramuri:<input type="text" name="name"><br>    
 <input type="submit" value="Submit">  
 </form>  

@@ -2,6 +2,8 @@ package ro.kepler.kepres2.consola.alextoma;
 
 import java.util.Scanner;
 
+import ro.kepler.kepprt.kepres2.app.alextoma.Bradulet;
+
 public class Consola {
 
 	public int valid() {
@@ -22,9 +24,9 @@ public class Consola {
 
 	public void afisare(Bradulet b) {
 
-		for (int x = 1; x <= b.lin + 1; x++) {
-			for (int y = 1; y <= 2 * b.n + 1; y++)
-				if (b.mat[x][y] == 0)
+		for (int x = 1; x <= b.getLin() + 1; x++) {
+			for (int y = 1; y <= 2 * b.getLin() + 1; y++)
+				if (b.getMat()[x][y] == 0)
 					System.out.print(" ");
 				else
 					System.out.print("*");
