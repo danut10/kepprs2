@@ -1,4 +1,4 @@
-
+package ro.kepler.kepprt.app.ioana;
 
 public class Brad {
 
@@ -29,10 +29,5 @@ public class Brad {
 		}
 		matrice[linii+1][varfR] = matrice[linii][varfR] = 1;
 	}
-	
-	public int getNrRamuri () {
-		return nrRamuri;
-	}
-	
 	
 }
