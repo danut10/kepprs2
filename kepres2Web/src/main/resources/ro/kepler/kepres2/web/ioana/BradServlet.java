@@ -1,3 +1,4 @@
+package ro.kepler.kepprt;
 
 import java.io.IOException;  
 import java.io.PrintWriter;  
@@ -7,10 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpServletResponse;  
 
-public class BradController extends HttpServlet {
+public class BradServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-    public BradController() {
+	
+    public BradServlet() {
         super();
     }
 	
@@ -19,7 +21,14 @@ public class BradController extends HttpServlet {
         response.setContentType("text/html");  
         
         
-        PrintWriter out=response.getWriter();  
+        PrintWriter out=response.getWriter(); 
+        out.println("<html>");
+		out.println("<style>");
+		out.println("body {");
+		out.println("font-family: monospace;");
+		out.println("}");
+		out.println("</style");
+		out.println("<body>");
           
         int nrRamuri=Integer.parseInt(request.getParameter("nrRamuri"));  
          
