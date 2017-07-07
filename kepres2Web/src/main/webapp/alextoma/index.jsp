@@ -5,13 +5,12 @@
 
 	<h2>Bradulet</h2>
 
-
 	<%@ page import="ro.kepler.kepres2.web.alextoma.Bradulet" %>
 
 	
 	<div id="brad">
 	<% 
-	
+	out.print("daaa");
 	int n=5;
 	Bradulet brad = new Bradulet(n);
 	brad.creareBrad();
@@ -24,7 +23,7 @@
 				out.print("*");
 		out.print("<br>");
 		}
-	%>
+	%> 
 	</div>
 	 
 </body>
