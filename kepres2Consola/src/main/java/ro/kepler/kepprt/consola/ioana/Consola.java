@@ -1,4 +1,6 @@
-package ro.kepler.kepres2.consola.ioana;
+package ro.kepler.kepprt.consola.ioana;
+
+import ro.kepler.kepprt.app.ioana.Brad;
 
 public class Consola {
 	private char fg = '*';
