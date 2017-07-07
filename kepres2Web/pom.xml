@@ -1,18 +1,21 @@
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="
+		http://maven.apache.org/POM/4.0.0 
+		http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ro.kepler</groupId>
-	<artifactId>kepres2Consola</artifactId>	
-	<version>1.0</version>	
+	<artifactId>kepres2Web</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
 
 	<properties>
 		<spring-framework.version>4.1.7.RELEASE</spring-framework.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>springsource-repo</id>
@@ -20,21 +23,43 @@
 			<url>http://repo.springsource.org/release</url>
 		</repository>
 	</repositories>
-		
+	
 	<dependencies>
-
 		<!-- kepres2App -->
 		<dependency>
 			<groupId>ro.kepler</groupId>
 			<artifactId>kepres2App</artifactId>
 			<version>1.0</version>
 		</dependency>
-
-		<!-- commons-lang -->
+		
+		<!-- servlet-api -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.5</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- jsp-api -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- spring webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-framework.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -43,7 +68,7 @@
 		<plugins>
             <!-- maven-compiler-plugin -->
 			<!-- maven vine implicit configurat pentru o versiune veche de jdk -->
-			<!-- noua ne trebuie configurat pentru jdk 1.8 -->
+			<!-- noua ne trebuie configurat pentru jdk 1.7 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
