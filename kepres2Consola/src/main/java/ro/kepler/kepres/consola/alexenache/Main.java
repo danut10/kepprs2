@@ -1,5 +1,7 @@
-package ro.kepler.kepres2.consola.alexenache;
-import ro.kepler.kepprt.kepres2.app.alexenache.*;
+package ro.kepler.kepres.consola.alexenache;
+
+import ro.kepler.kepprt.app.alexenache.Tree;
+
 public class Main {
 
 	public static void main(String[] args) throws Exception {

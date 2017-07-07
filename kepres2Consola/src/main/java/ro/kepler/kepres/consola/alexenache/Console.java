@@ -1,7 +1,11 @@
-package ro.kepler.kepres2.consola.alexenache;
+package ro.kepler.kepres.consola.alexenache;
+
 import java.util.Scanner;
 
-import ro.kepler.kepprt.kepres2.app.alexenache.*;
+import ro.kepler.kepprt.app.alexenache.DataTree;
+import ro.kepler.kepprt.app.alexenache.NormalTree;
+import ro.kepler.kepprt.app.alexenache.Tree;
+import ro.kepler.kepprt.app.alexenache.TriangularTree;
 
 public class Console {
 

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ro.kepler.kepprt.kepres2.app.alexenache.Tree;
+import ro.kepler.kepprt.app.alexenache.Tree;
 
 public class ServletTree extends HttpServlet {
 	

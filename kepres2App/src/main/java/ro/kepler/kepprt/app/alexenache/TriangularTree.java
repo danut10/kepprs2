@@ -1,23 +1,23 @@
-package ro.kepler.kepprt.kepres2.app.alexenache;
+package ro.kepler.kepprt.app.alexenache;
+public class TriangularTree implements Tree {
 
-public class NormalTree implements Tree{
-	
 	private int branches;
 	private int currentRow;
 	private byte[][] treeMatrix;
 	DataTree matrix;
 	
-	public NormalTree(int branches) {
+	public TriangularTree(int branches) {
 		
 		this.branches = branches;
 		this.currentRow = 0;
-		treeMatrix = new byte[sum(branches + 1) + 1][2 * sum(branches) + 1];
+		treeMatrix = new byte[sum(branches + 1) + 1][2 * branches + 1];
 		matrix = new DataTree();
 		matrix.setHeigth(sum(branches + 1) + 1);
-		matrix.setWidth(2 * sum(branches) + 1);
+		matrix.setWidth(2 * branches + 1);
 		createTree();
 	}
 
+	
 	public DataTree getDataTree() {
 		return matrix;
 	}
@@ -49,17 +49,17 @@ public class NormalTree implements Tree{
 
 	private void createRow(int row) {
 
-		createLength(sum(branches) - sum(row), (byte)0, 0);
-		createLength(1, (byte)1, sum(branches) - sum(row));
-		createLength(2 * sum(row), (byte)1, sum(branches) - sum(row) + 1);
-		createLength(sum(branches) - sum(row), (byte)0, sum(branches) + sum(row) + 1);
+		createLength(branches - row, (byte)0, 0);
+		createLength(1, (byte)1, branches - row);
+		createLength(2 * row, (byte)1, branches - row + 1);
+		createLength(branches - row, (byte)0, branches + row + 1);
 
 	}
 
-	private void createLength(int length, byte character, int start) {
+	private void createLength(int length, byte i, int start) {
 
 		for (int k = 0; k < length; ++k) {
-			treeMatrix[currentRow][k + start] = character;
+			treeMatrix[currentRow][k + start] = i;
 		}
 	}
 	
@@ -72,5 +72,4 @@ public class NormalTree implements Tree{
 	private int sum(int number) {
 		return number * (number + 1) / 2;
 	}
-	
 }
