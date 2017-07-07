@@ -16,9 +16,7 @@ public class Bradulet {
 		mat = new byte[ 100 ][ 100 ];
 		for (ramura = 1; ramura <= n; ramura++) {
 			for (nivel = 1; nivel <= ramura + 1; nivel++) {
-				frunza = 0;
-				for (poz = 1; poz <= 2 * nivel - 1; poz++)
-					frunza++;
+				frunza = 2 * nivel - 1;
 				for (poz = 1; poz <= (2 * n + 1 - frunza) / 2; poz++)
 					//System.out.print(" ");
 					mat[ lin ][ poz ] = 0;
