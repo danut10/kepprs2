@@ -1,4 +1,4 @@
-package ro.kepler.kepres2.consola.andrei;
+package ro.kepler.kepprt.consola.andrei;
 
 public class Main {
 
