@@ -22,7 +22,7 @@ public class BradServlet extends HttpServlet {
           
         int nrRamuri=Integer.parseInt(request.getParameter("nrRamuri"));  
         Brad brad = new Brad(nrRamuri);
-        
+       
         char fg = '*';
         char bg = ' ';
         for (int i = 0; i < brad.linii + 2; i++) {
