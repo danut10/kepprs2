@@ -1,4 +1,4 @@
-package ro.kepler.kepres2.consola.george;
+package ro.kepler.kepres.consola.george;
 
 import java.util.Scanner;
 

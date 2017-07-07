@@ -1,5 +1,5 @@
 
-package ro.kepler.kepres2.consola.george;
+package ro.kepler.kepres.consola.george;
 
 public class Main {
 	public static void main(String[] args) {
