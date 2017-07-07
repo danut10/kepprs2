@@ -2,7 +2,8 @@ package ro.kepler.kepres2.consola.alextoma;
 
 import java.util.Scanner;
 
-import ro.kepler.kepprt.kepres2.app.alextoma.Bradulet;
+import ro.kepler.kepprt.app.alextoma.Bradulet;
+
 
 public class Consola {
 
