@@ -26,5 +26,6 @@ public class Brad {
 		}
 		matrice[nrLinii + 1][nrRamuri] = '*';
 		matrice[nrLinii][nrRamuri] = '*';
+		
 	}
 }
