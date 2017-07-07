@@ -15,10 +15,10 @@
 	for (int i = 0; i < brad.linii + 2; i++) {
 		for (int j = 0; j < brad.coloane; j++) {
 			if ( brad.matrice[i][j] == 1 ) {
-				out.print(fg);
+				out.print("*");
 			}
 			else {
-				out.print(bg);
+				out.print("&nbsp&nbsp");
 			}
 		}
 		out.print("<br>");
