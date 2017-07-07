@@ -1,4 +1,5 @@
 package ro.kepler.kepprt.app.alexenache;
+
 public class TriangularTree implements Tree {
 
 	private int branches;
@@ -73,3 +74,4 @@ public class TriangularTree implements Tree {
 		return number * (number + 1) / 2;
 	}
 }
+

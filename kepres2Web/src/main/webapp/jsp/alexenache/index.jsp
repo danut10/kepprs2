@@ -9,7 +9,7 @@
 <p> 1) Normal </p>
 <p> 2) Triangular </p>
 
-<form action = "ServletClass" method = "post">
+<form action = "ServletTree" method = "post">
 	<br> Number of branches <input type = "text" name = "numberOfBranches" />
 	<br> Type of tree <input type = "text" name = "typeOfTree" />
 	<br> <input type = "submit" />
