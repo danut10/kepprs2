@@ -1,5 +1,7 @@
 package ro.kepler.kepprt.consola.andrei;
 
+import ro.kepler.kepprt.app.andrei.Brad;
+
 public class Main {
 
 	public static void main(String[] args) {

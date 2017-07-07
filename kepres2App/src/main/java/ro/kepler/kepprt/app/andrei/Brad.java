@@ -1,4 +1,4 @@
-package ro.kepler.kepprt.consola.andrei;
+package ro.kepler.kepprt.app.andrei;
 
 public class Brad {
 
