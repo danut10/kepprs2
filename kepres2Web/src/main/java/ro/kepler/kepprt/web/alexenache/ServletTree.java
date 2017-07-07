@@ -6,26 +6,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletClass extends HttpServlet {
+import ro.kepler.kepprt.kepres2.app.alexenache.Tree;
+
+public class ServletTree extends HttpServlet {
 	
-	private static final long serialVersionUID = 1L;
-       
-    public ServletClass() {
-        super();
-    }
-    
+//    public ServletClass() {
+//        super();
+//    }
+//    
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
-		VerifyInput input = new VerifyInput(request);
-		
-		if(input.getResult() == false) {
-				response.sendRedirect("index.jsp");
-		}
-		else {
-			
-			Console console = new Console();
-			console.write(input, response);
-			
+		try {
+			WebUtils utils = new WebUtils();
+			Tree tree = utils.readTree(request);
+			utils.writeTree(tree, response);
+		} catch (Exception e) {
+			response.sendRedirect("index.jsp");
 		}
 	}
 

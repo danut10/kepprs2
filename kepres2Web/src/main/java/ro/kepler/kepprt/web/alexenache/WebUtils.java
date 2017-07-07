@@ -6,19 +6,29 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Console {
+public class WebUtils {
 
-	public void write(VerifyInput input, HttpServletResponse response) throws ServletException, IOException {
+	public Tree readTree(HttpServletRequest request) throws Exception {
 		
-		Tree tree;
-		if(input.getType() == 1) {
-			tree = new NormalTree(input.getBranches());
+		int branches = Integer.parseInt(request.getParameter("numberOfBranches"));
+		int type = Integer.parseInt(request.getParameter("typeOfTree"));
+			
+		if(branches <= 0 || (type != 1 && type != 2)) {
+			throw(new Exception());
+		}
+		
+		if(type == 1) {
+			return new NormalTree(branches);
 		}
 		else {
-			tree = new TriangularTree(input.getBranches());
+			return new TriangularTree(branches);
 		}
+	}
+	
+	public void writeTree(Tree tree, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out = response.getWriter();
 		
