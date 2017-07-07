@@ -1,6 +1,6 @@
 package ro.kepler.kepres2.consola.alextoma;
 
-import ro.kepler.kepprt.kepres2.app.alextoma.Bradulet;
+import ro.kepler.kepprt.app.alextoma.Bradulet;
 import ro.kepler.kepres2.consola.alextoma.Consola;
 
 public class Main {
