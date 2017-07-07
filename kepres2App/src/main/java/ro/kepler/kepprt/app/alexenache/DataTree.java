@@ -1,4 +1,4 @@
-package ro.kepler.kepprt.kepres2.app.alexenache;
+package ro.kepler.kepprt.app.alexenache;
 
 public class DataTree {
 
