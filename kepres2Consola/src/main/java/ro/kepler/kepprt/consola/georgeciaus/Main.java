@@ -1,5 +1,7 @@
 
-package ro.kepler.kepres2.consola.george;
+package ro.kepler.kepprt.consola.georgeciaus;
+
+import ro.kepler.kepprt.app.georgeciaus.Brad;
 
 public class Main {
 	public static void main(String[] args) {

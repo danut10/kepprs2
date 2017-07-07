@@ -1,7 +1,7 @@
-package ro.kepler.kepres2.consola.alextoma;
+package ro.kepler.kepprt.consola.alextoma;
 
 import ro.kepler.kepprt.app.alextoma.Bradulet;
-import ro.kepler.kepres2.consola.alextoma.Consola;
+import ro.kepler.kepprt.consola.alextoma.Consola;
 
 public class Main {
 
