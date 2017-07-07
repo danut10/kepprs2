@@ -1,7 +1,9 @@
 package ro.kepler.kepprt.web.alexenache;
 
-import ro.kepler.kepprt.kepres2.app.alexenache.*;
-
+import ro.kepler.kepprt.app.alexenache.DataTree;
+import ro.kepler.kepprt.app.alexenache.NormalTree;
+import ro.kepler.kepprt.app.alexenache.Tree;
+import ro.kepler.kepprt.app.alexenache.TriangularTree;
 import java.io.IOException;
 import java.io.PrintWriter;
 
