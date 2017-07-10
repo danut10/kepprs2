@@ -1,4 +1,4 @@
-package ro.kepler.kepprt.web.BogdanVisan;
+package ro.kepler.kepprt.web.bogdanvisan;
 
 import java.io.PrintWriter;
 

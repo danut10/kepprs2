@@ -24,7 +24,7 @@
 	<!-- servlet Bogdan -->
 	<servlet>
 		<servlet-name>TreeServlet</servlet-name>
-		<servlet-class>ro.kepler.kepprt.web.BogdanVisan.TreeServlet</servlet-class>
+		<servlet-class>ro.kepler.kepprt.web.bogdanvisan.TreeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>TreeServlet</servlet-name>
