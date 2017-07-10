@@ -4,7 +4,7 @@
 
 <div>
 
-	<table>
+	<table border="1">
 		<tr>
 			<th align="left">Cod angajat</th>
 	   		<th align="left">Nume</th>
@@ -13,7 +13,7 @@
 
 	 	<c:forEach var="angajat" items="${recordList}">
 	 	<tr>
-			<td align="left">${angajat.cod}</td>
+			<td align="left"><a href="view?id=${angajat.id}">${angajat.cod}</a></td>
 			<td align="left">${angajat.nume}</td>
 		</tr>
 		</c:forEach>

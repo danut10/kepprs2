@@ -3,22 +3,22 @@
 
 <div>
 	<c:if test="${screenStatus == 'list'}">
-		<input type="button" value="Adauga">
+		<input type="button" value="Adauga" onclick="window.location='add'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'view'}">
-		<input type="button" value="Editare">
-		<input type="button" value="Stergere">
-		<input type="button" value="Lista">
+		<input type="button" value="Editare" onclick="window.location='edit?id=${record.id}'">
+		<input type="button" value="Stergere" onclick="window.location='delete?id=${record.id}'">
+		<input type="button" value="Lista" onclick="window.location='list'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">
-		<input type="submit" value="Salvare">
-		<input type="button" value="Renuntare">
+		<input type="submit" value="Salvare" form="frmDetails" formaction="update">
+		<input type="button" value="Renuntare" onclick="window.location='view?id=${record.id}'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'add'}">
-		<input type="submit" value="Salvare">
-		<input type="button" value="Renuntare">
+		<input type="submit" value="Salvare" form="frmDetails" formaction="create">
+		<input type="button" value="Renuntare" onclick="window.location='list'">
 	</c:if>
 </div>
