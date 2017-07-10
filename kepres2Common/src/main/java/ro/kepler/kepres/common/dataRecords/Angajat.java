@@ -8,15 +8,15 @@ public class Angajat {
 	private String memo;
 	
 	public Integer getId() { return id;	}
-	public void setId(Integer id) {	this.id = id; }
+	public Angajat setId(Integer id) {	this.id = id; return this; }
 	
 	public String getCod() { return cod; }
-	public void setCod(String cod) { this.cod = cod; }
+	public Angajat setCod(String cod) { this.cod = cod; return this;}
 	
 	public String getNume() { return nume; }
-	public void setNume(String nume) { this.nume = nume; }
+	public Angajat setNume(String nume) { this.nume = nume; return this;}
 	
 	public String getMemo() { return memo; }
-	public void setMemo(String memo) { this.memo = memo; }
+	public Angajat setMemo(String memo) { this.memo = memo; return this;}
 
 }
