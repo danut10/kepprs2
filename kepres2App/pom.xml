@@ -12,5 +12,23 @@
 		<version>1.0</version>
 		<relativePath>../kepres2/pom.xml</relativePath>		
 	</parent>
+	
+	<dependencies>
+		
+		<!-- kepres2Common -->
+		<dependency>
+			<groupId>ro.kepler</groupId>
+			<artifactId>kepres2Common</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+		<!-- spring webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>		
+		
+	</dependencies>	
 		
 </project>
