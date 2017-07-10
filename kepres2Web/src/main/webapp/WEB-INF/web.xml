@@ -7,19 +7,35 @@
 		http://java.sun.com/xml/ns/javaee
 		http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<!-- servlet Andrei Enache -->
 	<servlet>
 		<servlet-name>ServletTree</servlet-name>
 		<servlet-class>ro.kepler.kepprt.web.alexenache.ServletTree</servlet-class>
-		
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>ServletTree</servlet-name>
 		<url-pattern>/alexenache/tree</url-pattern>
 	</servlet-mapping>
 	
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
+	<!-- Spring IoC -->
+	<!-- Load by default /WEB-INF/applicationContext.xml -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+		
+	<!-- Spring WebMVC -->
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/mvc/*</url-pattern>
+	</servlet-mapping>
 
+		
 </web-app>
