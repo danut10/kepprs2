@@ -8,6 +8,8 @@ public class Atasament {
 	private String url;
 	private Date dtUpload;
 	private String memo;
+	private TipFisier tipFisier;
+	private Angajat angajat;
 	
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }
@@ -23,5 +25,13 @@ public class Atasament {
 	
 	public String getMemo() { return memo; }
 	public void setMemo(String memo) { this.memo = memo; }
+	
+	public TipFisier getTipFisier() { return tipFisier; }
+	public void setTipFisier(TipFisier tipFisier) {	this.tipFisier = tipFisier;	}
+	
+	public Angajat getAngajat() { return angajat; }
+	public void setAngajat(Angajat angajat) { this.angajat = angajat; }
+	
+	
 	
 }
