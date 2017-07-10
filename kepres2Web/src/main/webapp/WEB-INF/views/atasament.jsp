@@ -25,10 +25,18 @@
 		
 	</form>
 
-	
-	<c:forEach items="${recordList}" var="record">
-		${record.titlu}<br>
-	</c:forEach>
+	<table>
+		<tr>
+			<th>Titlu Atasament</th>
+			<th>Data upload</th>
+		</tr>
+		<c:forEach items="${recordList}" var="record">
+			<tr>
+				<th>${record.titlu}</th>
+				<th>${record.dtUpload}</th>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 
 </html>
