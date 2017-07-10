@@ -5,10 +5,27 @@
 
 <head>
 	<title>Atasamente</title>
+	<script>
+		function upload() {
+		    var x = document.getElementById("myFile");
+		    x.disabled = true;
+		}
+	</script>
 </head>
 
 <body>
 	<h1>Pagina de atasamente</h1>
+	
+	<form >
+		Titlu: <input type="text" name="Titlu" ><br>
+		Angajat: <input type="text" name="Angajat" ><br>
+		Memo: <input type="text" name="Memo" ><br>
+		<input type="file" id="myFile" ><br>
+		<input type="submit" value="Submit" >
+		
+	</form>
+
+	
 	<c:forEach items="${recordList}" var="record">
 		${record.titlu}<br>
 	</c:forEach>
