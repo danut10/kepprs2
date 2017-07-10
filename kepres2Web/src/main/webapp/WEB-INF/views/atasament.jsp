@@ -15,8 +15,9 @@
 
 <body>
 	<h1>Pagina de atasamente</h1>
-	
+
 	<form method="POST" action="AtasamentUpload">
+		
 		Titlu: <input type="text" name="Titlu" ><br>
 		Angajat: <input type="text" name="Angajat" ><br>
 		Memo: <input type="text" name="Memo" ><br>
