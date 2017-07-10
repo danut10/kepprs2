@@ -12,6 +12,7 @@
 	</welcome-file-list>
 	
 	<!-- servlet Alex Enache -->
+	<!-- 
 	<servlet>
 		<servlet-name>ServletTree</servlet-name>
 		<servlet-class>ro.kepler.kepprt.web.alexenache.ServletTree</servlet-class>
@@ -20,8 +21,10 @@
 		<servlet-name>ServletTree</servlet-name>
 		<url-pattern>/alexenache/tree</url-pattern>
 	</servlet-mapping>
+	 -->
 	
 	<!-- servlet Bogdan -->
+	<!-- 
 	<servlet>
 		<servlet-name>TreeServlet</servlet-name>
 		<servlet-class>ro.kepler.kepprt.web.bogdanvisan.TreeServlet</servlet-class>
@@ -30,6 +33,7 @@
 		<servlet-name>TreeServlet</servlet-name>
 		<url-pattern>/bogdan/tree</url-pattern>
 	</servlet-mapping>
+	-->
 	
 	<!-- Spring IoC -->
 	<!-- Load by default /WEB-INF/applicationContext.xml -->
