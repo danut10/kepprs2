@@ -16,7 +16,7 @@ public class Factura {
 	private String memo;
 	
 	public Integer getId() { return id; }
-	public void setId(Integer id) {	this.id = id; }
+	public Factura setId(Integer id) {	this.id = id; return this; }
 	
 	public String getSerie() { return serie; }
 	public Factura setSerie(String serie) { this.serie = serie; return this; }
