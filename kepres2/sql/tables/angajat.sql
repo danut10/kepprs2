@@ -1,10 +1,13 @@
-DROP TABLE ANGAJAT;
+drop table ANGAJAT;
 
-CREATE TABLE ANGAJAT 
+create table ANGAJAT 
 (
-	  ID NUMBER(*, 0) NOT NULL 
-	, COD NVARCHAR2(5) NOT NULL 
-	, NUME NVARCHAR2(100) NOT NULL 
-	, MEMO NVARCHAR2(500) 
-	, CONSTRAINT PK_ANGAJAT PRIMARY KEY(ID)
+	  ID number(*, 0) not null 
+	, COD nvarchar2(5) not null 
+	, NUME nvarchar2(100) not null 
+	, MEMO nvarchar2(500) 
+	, constraint PK_ANGAJT primary key (ID)
 );  
+
+drop sequence SEQ_ANGAJAT;
+create sequence SEQ_ANGAJAT;
