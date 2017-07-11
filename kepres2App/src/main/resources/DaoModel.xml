@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ro.kepler.kepprt.alten.bradut.app.dao.DaoUtilizator">
+
+	<select id="readList" resultType="Utilizator">
+		SELECT *
+		FROM UTILIZATOR
+	</select>
+	
+		<select id="readRecordCount" resultType="int">
+		SELECT COUNT(id) 
+		FROM UTILIZATOR
+	</select>
+
+	<select id="read" resultType="Utilizator">
+		SELECT *
+		FROM UTILIZATOR
+		WHERE ID = #{id}
+	</select>
+	
+	<delete id="delete">
+		DELETE 
+		FROM UTILIZATOR 
+		WHERE ID = #{id}
+	</delete>
+	
+	<update id="update">
+		UPDATE UTILIZATOR
+     	SET USERNAME = #{record.username}, PASSWORD = #{record.password}
+		WHERE id = #{record.id}
+   </update>
+   
+   	<insert id="create" useGeneratedKeys="true" >
+		<selectKey keyProperty="record.id" resultType="int" order="BEFORE">
+			SELECT SEQ_UTILIZATOR.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO 
+			UTILIZATOR(ID, USERNAME, PASSWORD)
+		VALUES
+			( #{record.id}, #{record.username}, #{record.password})
+   </insert>
+
+</mapper>
