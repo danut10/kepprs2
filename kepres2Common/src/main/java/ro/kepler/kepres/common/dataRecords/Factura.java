@@ -9,40 +9,46 @@ public class Factura {
 	private Integer numar;
 	private Date dtEmitere;
 	private Date dtScadenta;
-	private float suma;
-	private float tva;
-	private float total;
+	private double suma;
+	private double tva;
+	private double total;
 	private Boolean draft;
 	private String memo;
+	private Angajat angajat;
 	
 	public Integer getId() { return id; }
-	public void setId(Integer id) {	this.id = id; }
+	public Factura setId(Integer id) {	this.id = id; return this; }
 	
 	public String getSerie() { return serie; }
-	public void setSerie(String serie) { this.serie = serie; }
+	public Factura setSerie(String serie) { this.serie = serie; return this; }
 	
 	public Integer getNumar() { return numar; }
-	public void setNumar(Integer numar) { this.numar = numar; }
+	public Factura setNumar(Integer numar) { this.numar = numar; return this; }
 	
 	public Date getDtEmitere() { return dtEmitere; }
-	public void setDtEmitere(Date dtEmitere) { this.dtEmitere = dtEmitere; }
+	public Factura setDtEmitere(Date dtEmitere) { this.dtEmitere = dtEmitere; return this; }
 	
 	public Date getDtScadenta() { return dtScadenta; }
-	public void setDtScadenta(Date dtScadenta) { this.dtScadenta = dtScadenta; }
+	public Factura setDtScadenta(Date dtScadenta) { this.dtScadenta = dtScadenta; return this; }
 	
-	public float getSuma() { return suma; }
-	public void setSuma(float suma) { this.suma = suma; }
+	public double getSuma() { return suma; }
+	public Factura setSuma(double suma) { this.suma = suma; return this; }
 	
-	public float getTva() { return tva; }
-	public void setTva(float tva) { this.tva = tva; }
+	public double getTva() { return tva; }
+	public Factura setTva(double tva) { this.tva = tva; return this; }
 	
-	public float getTotal() { return total; }
-	public void setTotal(float total) { this.total = total; }
+	public double getTotal() { return total; }
+	public Factura setTotal(double total) { this.total = total; return this; }
 	
 	public Boolean getDraft() { return draft; }
-	public void setDraft(Boolean draft) { this.draft = draft; }
+	public Factura setDraft(Boolean draft) { this.draft = draft; return this; }
 	
 	public String getMemo() { return memo; }
-	public void setMemo(String memo) { this.memo = memo; }
+	public Factura setMemo(String memo) { this.memo = memo; return this; }
+	
+	public Angajat getAngajat() { return angajat; }
+	public Factura setAngajat(Angajat angajat) { this.angajat = angajat; return this; }
+	
+	
 	
 }

@@ -1,26 +1,74 @@
 package ro.kepler.kepres.web.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import ro.kepler.kepres.app.dao.DaoFactura;
 import ro.kepler.kepres.common.dataRecords.Factura;
 
+
 @Controller
+@RequestMapping("/factura")
 public class ControllerFactura {
 	
-	@RequestMapping("/factura")
+	private String viewname = "factura";
+	
+	@Autowired
+	private DaoFactura dao;
+	
+	@RequestMapping("/list")
 	private String list(Model model) {
-		List<Factura> listaFactura = new ArrayList<>();
-		Factura f1 = new Factura();
-		f1.setSerie("abc");
-		f1.setNumar(1234);
-		f1.setSuma(3500);
-		listaFactura.add(f1);
-		
-		return "factura";
+		List<Factura> recordList = dao.readList();
+		model.addAttribute("recordList", recordList);
+		model.addAttribute("screenStatus", "list");
+		return viewname;
 	}
+	
+	@RequestMapping("/view")
+	private String view(@RequestParam("id") Integer id, Model model) {
+		Factura record = dao.read(id);
+		model.addAttribute("record", record);
+		model.addAttribute("screenStatus", "view");
+		return viewname;
+	}	
+
+	@RequestMapping("/add")
+	private String add(Model model) {
+		Factura record = new Factura();
+		model.addAttribute("record", record);
+		model.addAttribute("screenStatus", "add");
+		return viewname;
+	}	
+
+	@RequestMapping("/edit")
+	private String edit(@RequestParam("id") Integer id, Model model) {
+		Factura record = dao.read(id);
+		model.addAttribute("record", record);
+		model.addAttribute("screenStatus", "edit");
+		return viewname;
+	}	
+	
+	@RequestMapping("/create")
+	private String create(@ModelAttribute("record") Factura factura) {
+		Integer id = dao.create(factura);
+		return "redirect: view?id=" + id;
+	}		
+
+	@RequestMapping("/update")
+	private String update(@ModelAttribute("record") Factura factura) {
+		dao.update(factura);
+		return "redirect: view?id=" + factura.getId();
+	}		
+
+	@RequestMapping("/delete")
+	private String delete(@RequestParam("id") Integer id) {
+		dao.delete(id);
+		return "redirect: list";
+	}		
 }

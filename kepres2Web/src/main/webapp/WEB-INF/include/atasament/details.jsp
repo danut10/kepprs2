@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<div>
+<form:form id="frmDetails" modelAttribute="record" method="POST">
+<form:hidden path="id"/>
+<table>
+	<tr>
+		<td>Titlu Atasament</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.titlu}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="titlu"/>
+			</c:if>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>Memo</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<textarea placeholder="${record.memo}" rows="10" cols="22" disabled></textarea>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:textarea rows="10" cols="22" path="memo"/>
+			</c:if>
+		</td>
+	</tr>
+	<c:if test="${screenStatus == 'add'}">
+		<tr>
+			<td>Fisier</td>
+			<td>
+				<input type="file" value="choose file">
+			</td>
+		</tr>			
+	</c:if>
+	
+</table>
+</form:form>
+</div>
