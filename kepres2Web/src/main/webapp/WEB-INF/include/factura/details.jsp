@@ -29,6 +29,17 @@
 			</c:if>
 		</td>
 	</tr>
+		<tr>
+		<td>Suma</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.suma}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="suma"/>
+			</c:if>
+		</td>
+	</tr>
 </table>
 </form:form>
 </div>

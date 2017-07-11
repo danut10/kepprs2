@@ -6,8 +6,11 @@
 
 	<table border="1">
 		<tr>
+		    
 			<th align="left">Serie factura</th>
 	   		<th align="left">Numar</th>
+	   		<th align="left">Suma</th>
+	   	
 	 	</tr>
 	 	
 
@@ -15,6 +18,7 @@
 	 	<tr>
 			<td align="left"><a href="view?id=${factura.id}">${factura.serie}</a></td>
 			<td align="left">${factura.numar}</td>
+			<td align="left">${factura.suma}</td>
 		</tr>
 		</c:forEach>
 	

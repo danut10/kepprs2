@@ -16,9 +16,9 @@ public class DaoFactura {
 	
 	public DaoFactura() {
 		tabela = new Hashtable<>();
-		tabela.put(1, new Factura().setId(1).setSerie("AAA").setNumar(123));
-		tabela.put(2, new Factura().setId(2).setSerie("BBB").setNumar(456));
-		tabela.put(3, new Factura().setId(3).setSerie("CCC").setNumar(789));
+		tabela.put(1, new Factura().setId(1).setSerie("AAA").setNumar(123).setSuma(23));
+		tabela.put(2, new Factura().setId(2).setSerie("BBB").setNumar(456).setSuma(78));
+		tabela.put(3, new Factura().setId(3).setSerie("CCC").setNumar(789).setSuma(3455));
 		
 	}
 	
