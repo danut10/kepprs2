@@ -9,9 +9,9 @@ public class Factura {
 	private Integer numar;
 	private Date dtEmitere;
 	private Date dtScadenta;
-	private float suma;
-	private float tva;
-	private float total;
+	private double suma;
+	private double tva;
+	private double total;
 	private Boolean draft;
 	private String memo;
 	private Angajat angajat;
@@ -31,14 +31,14 @@ public class Factura {
 	public Date getDtScadenta() { return dtScadenta; }
 	public Factura setDtScadenta(Date dtScadenta) { this.dtScadenta = dtScadenta; return this; }
 	
-	public float getSuma() { return suma; }
-	public Factura setSuma(float suma) { this.suma = suma; return this; }
+	public double getSuma() { return suma; }
+	public Factura setSuma(double suma) { this.suma = suma; return this; }
 	
-	public float getTva() { return tva; }
-	public Factura setTva(float tva) { this.tva = tva; return this; }
+	public double getTva() { return tva; }
+	public Factura setTva(double tva) { this.tva = tva; return this; }
 	
-	public float getTotal() { return total; }
-	public Factura setTotal(float total) { this.total = total; return this; }
+	public double getTotal() { return total; }
+	public Factura setTotal(double total) { this.total = total; return this; }
 	
 	public Boolean getDraft() { return draft; }
 	public Factura setDraft(Boolean draft) { this.draft = draft; return this; }
