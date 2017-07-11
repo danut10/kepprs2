@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ro.kepler.kepres.app.dao.DaoAngajat;
+import ro.kepler.kepres.app.dao.DaoAngajat1;
 import ro.kepler.kepres.common.dataRecords.Angajat;
 
 @Controller
@@ -18,8 +19,9 @@ public class ControllerAngajat {
 	
 	private String viewname = "angajat";
 	
-	@Autowired
-	private DaoAngajat dao;
+	@SuppressWarnings("unused")
+	@Autowired private DaoAngajat1 dao1;
+	@Autowired private DaoAngajat dao;
 	
 	@RequestMapping("/list")
 	private String list(Model model) {
@@ -55,7 +57,8 @@ public class ControllerAngajat {
 	
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") Angajat angajat) {
-		Integer id = dao.create(angajat);
+		dao.create(angajat);
+		Integer id = angajat.getId();
 		return "redirect: view?id=" + id;
 	}		
 

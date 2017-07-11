@@ -8,10 +8,11 @@
 		<setting name="autoMappingBehavior" value="FULL"/>
 		<setting name="cacheEnabled" value="false"/>
 		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 
 	<typeAliases>
-  		<package name="ro.kepler.kepres.common.domain"/>
+  		<package name="ro.kepler.kepres.common.dataRecords"/>
 	</typeAliases>
 
 	<mappers>

@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import ro.kepler.kepres.app.dao.DaoAtasament;
 import ro.kepler.kepres.common.dataRecords.Atasament;
 
@@ -70,6 +69,12 @@ public class ControllerAtasament {
 		dao.delete(id);
 		return "redirect: list";
 	}		
+	
+	@RequestMapping("/download")
+	private String download(@RequestParam("id") Integer id) {
+		System.out.println("Suntem in download");
+		return "redirect: view?id=" + id;
+	}
 	
 	/*@RequestMapping("/atasament/list")
 	private String list(Model model) {

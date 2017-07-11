@@ -6,8 +6,9 @@ import ro.kepler.kepprt.app.ioana.Brad;
 
 public class Main {
 	public static void main(String[] args) {
-		try{
-		 Scanner s = new Scanner(System.in);
+		Scanner s = null;
+		try {
+		 s = new Scanner(System.in);
 		 System.out.println("Introduceti numarul de ramuri: ");
 		 int numarRamuri = s.nextInt();
 		 Brad brad = new Brad(numarRamuri);
@@ -16,6 +17,8 @@ public class Main {
 			cons.afisareBrad(brad);
 		} catch (Exception e) {
 			System.out.println("Introduceti un numar natural!");
-		  }	
+		} finally {
+			s.close();
+		}	
 	}
 }

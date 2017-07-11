@@ -29,6 +29,26 @@
 			</c:if>
 		</td>
 	</tr>
+	<tr>
+		<td>Data Emitere</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.dtEmitere}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="dtEmitere"/>
+			</c:if>
+		</td>
+		<tr>
+		<td>Data Scadenta</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.dtScadenta}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="dtScadenta"/>
+			</c:if>
+		</td>
 		<tr>
 		<td>Suma</td>
 		<td>
@@ -40,6 +60,49 @@
 			</c:if>
 		</td>
 	</tr>
+		<tr>
+		<td>Tva</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.tva}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="tva"/>
+			</c:if>
+		</td>
+		<tr>
+		<td>Total</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.total}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="total"/>
+			</c:if>
+		</td>
+		<tr>
+		<td>Draft</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.draft}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="draft"/>
+			</c:if>
+		</td>
+	</tr>
+	<tr>
+		<td>Memo</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.memo}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="memo"/>
+			</c:if>
+		</td>
+	</tr>
+
 </table>
 </form:form>
 </div>
