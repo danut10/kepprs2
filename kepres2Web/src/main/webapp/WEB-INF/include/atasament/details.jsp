@@ -29,6 +29,17 @@
 			</c:if>
 		</td>
 	</tr>
+	<tr>
+		<td>Fisier</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="button" value="Download">
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<input type="file" value="choose file">
+			</c:if>
+		</td>
+	</tr>
 </table>
 </form:form>
 </div>

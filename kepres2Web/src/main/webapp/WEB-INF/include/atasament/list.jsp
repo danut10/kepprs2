@@ -15,6 +15,7 @@
 	 	<tr>
 			<td align="left"><a href="view?id=${atasament.id}">${atasament.titlu}</a></td>
 			<td align="left">${atasament.memo}</td>
+			
 		</tr>
 		</c:forEach>
 	
