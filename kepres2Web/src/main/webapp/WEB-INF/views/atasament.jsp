@@ -6,6 +6,7 @@
 
 <head>
 	<title>Atasamente</title>
+	<link rel="stylesheet" href="css/atasamente/style.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
  	<c:if test="${screenStatus != 'list'}">
 		<jsp:include page="/WEB-INF/include/atasament/details.jsp"/>
 	</c:if>
-	
+
 	
 </body>
 
