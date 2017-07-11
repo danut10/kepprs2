@@ -14,6 +14,7 @@ public class Factura {
 	private float total;
 	private Boolean draft;
 	private String memo;
+	private Angajat angajat;
 	
 	public Integer getId() { return id; }
 	public Factura setId(Integer id) {	this.id = id; return this; }
@@ -44,5 +45,10 @@ public class Factura {
 	
 	public String getMemo() { return memo; }
 	public Factura setMemo(String memo) { this.memo = memo; return this; }
+	
+	public Angajat getAngajat() { return angajat; }
+	public Factura setAngajat(Angajat angajat) { this.angajat = angajat; return this; }
+	
+	
 	
 }

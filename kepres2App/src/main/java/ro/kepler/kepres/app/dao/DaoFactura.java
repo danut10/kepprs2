@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import ro.kepler.kepres.common.dataRecords.Angajat;
 import ro.kepler.kepres.common.dataRecords.Factura;
 
 @Component
@@ -16,9 +17,9 @@ public class DaoFactura {
 	
 	public DaoFactura() {
 		tabela = new Hashtable<>();
-		tabela.put(1, new Factura().setId(1).setSerie("AAA").setNumar(123).setSuma(23));
-		tabela.put(2, new Factura().setId(2).setSerie("BBB").setNumar(456).setSuma(78));
-		tabela.put(3, new Factura().setId(3).setSerie("CCC").setNumar(789).setSuma(3455));
+		tabela.put(1, new Factura().setId(1).setSerie("AAA").setNumar(123).setSuma(23).setAngajat(new Angajat().setNume("vasile")));
+		tabela.put(2, new Factura().setId(2).setSerie("BBB").setNumar(456).setSuma(78).setAngajat(new Angajat().setNume("gigel")));
+		tabela.put(3, new Factura().setId(3).setSerie("CCC").setNumar(789).setSuma(3455).setAngajat(new Angajat().setNume("ionica")));
 		
 	}
 	
