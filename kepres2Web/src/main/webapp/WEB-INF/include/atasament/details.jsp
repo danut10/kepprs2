@@ -22,24 +22,22 @@
 		<td>Memo</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.memo}" disabled>
+				<textarea placeholder="${record.memo}" rows="10" cols="22" disabled></textarea>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
-				<form:input path="memo"/>
+				<form:textarea rows="10" cols="22" path="memo"/>
 			</c:if>
 		</td>
 	</tr>
-	<tr>
-		<td>Fisier</td>
-		<td>
-			<c:if test="${screenStatus == 'view'}">
-				<input type="button" value="Download">
-			</c:if>
-			<c:if test="${screenStatus != 'view'}">
+	<c:if test="${screenStatus == 'add'}">
+		<tr>
+			<td>Fisier</td>
+			<td>
 				<input type="file" value="choose file">
-			</c:if>
-		</td>
-	</tr>
+			</td>
+		</tr>			
+	</c:if>
+	
 </table>
 </form:form>
 </div>
