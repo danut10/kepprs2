@@ -12,25 +12,25 @@ public class Atasament {
 	private Angajat angajat;
 	
 	public Integer getId() { return id; }
-	public void setId(Integer id) { this.id = id; }
+	public Atasament setId(Integer id) { this.id = id; return this; }
 	
 	public String getTitlu() { return titlu; }
-	public void setTitlu(String titlu) { this.titlu = titlu; }
+	public Atasament setTitlu(String titlu) { this.titlu = titlu; return this; }
 	
 	public String getUrl() { return url; }
-	public void setUrl(String url) { this.url = url; }
+	public Atasament setUrl(String url) { this.url = url; return this; }
 	
 	public Date getDtUpload() { return dtUpload; }
-	public void setDtUpload(Date dtUpload) { this.dtUpload = dtUpload; }
+	public Atasament setDtUpload(Date dtUpload) { this.dtUpload = dtUpload; return this; }
 	
 	public String getMemo() { return memo; }
-	public void setMemo(String memo) { this.memo = memo; }
+	public Atasament setMemo(String memo) { this.memo = memo; return this; }
 	
 	public TipFisier getTipFisier() { return tipFisier; }
-	public void setTipFisier(TipFisier tipFisier) {	this.tipFisier = tipFisier;	}
+	public Atasament setTipFisier(TipFisier tipFisier) {	this.tipFisier = tipFisier;	return this; }
 	
 	public Angajat getAngajat() { return angajat; }
-	public void setAngajat(Angajat angajat) { this.angajat = angajat; }
+	public Atasament setAngajat(Angajat angajat) { this.angajat = angajat; return this; }
 	
 	
 	
