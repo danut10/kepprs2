@@ -11,30 +11,6 @@
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
-	<!-- servlet Alex Enache -->
-	<!-- 
-	<servlet>
-		<servlet-name>ServletTree</servlet-name>
-		<servlet-class>ro.kepler.kepprt.web.alexenache.ServletTree</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ServletTree</servlet-name>
-		<url-pattern>/alexenache/tree</url-pattern>
-	</servlet-mapping>
-	 -->
-	
-	<!-- servlet Bogdan -->
-	<!-- 
-	<servlet>
-		<servlet-name>TreeServlet</servlet-name>
-		<servlet-class>ro.kepler.kepprt.web.bogdanvisan.TreeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>TreeServlet</servlet-name>
-		<url-pattern>/bogdan/tree</url-pattern>
-	</servlet-mapping>
-	-->
-	
 	<!-- Spring IoC -->
 	<!-- Load by default /WEB-INF/applicationContext.xml -->
 	<listener>

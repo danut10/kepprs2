@@ -11,20 +11,20 @@
 		    x.disabled = true;
 		}
 	</script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/atasament/style.css">
 </head>
 
 <body>
-	<h1>Pagina de atasamente</h1>
-
-	<form method="POST" action="AtasamentUpload">
-		
-		Titlu: <input type="text" name="Titlu" ><br>
-		Angajat: <input type="text" name="Angajat" ><br>
-		Memo: <input type="text" name="Memo" ><br>
-		<input type="file" id="myFile" ><br>
-		<input type="submit" value="Submit" >
-		
-	</form>
+	
+	
+	<ul>
+		<li><a class="active" href="#atasament.jsp">Lista Atasamente</a></li>
+		<li><a href="#adaugareAtasament.jsp">Adaugare Atasament</a></li>
+	</ul>
+	
+	<h1>Pagina de atasamente</h1><br>
+	
+	
 
 	<table>
 		<tr>
