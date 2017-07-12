@@ -76,7 +76,6 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/download")
 	private String download(@RequestParam("id") Integer id) {
-		System.out.println("Suntem in download");
 		return "redirect: view?id=" + id;
 	}
 }
