@@ -10,10 +10,10 @@
 		<td>Titlu Atasament</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.titlu}" disabled>
+				<input type="text" value="${record.titlu}" size="30" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
-				<form:input path="titlu"/>
+				<form:input path="titlu" size="30" />
 			</c:if>
 			
 		</td>
@@ -22,10 +22,10 @@
 		<td>Memo</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<textarea placeholder="${record.memo}" rows="10" cols="22" disabled></textarea>
+				<textarea placeholder="${record.memo}" rows="10" cols="32" disabled></textarea>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
-				<form:textarea rows="10" cols="22" path="memo"/>
+				<form:textarea rows="10" cols="30" path="memo"/>
 			</c:if>
 		</td>
 	</tr>
@@ -33,7 +33,7 @@
 		<tr>
 			<td>Data Upload</td>
 			<td>
-				<input type="date" value="${record.dtUpload}" disabled>
+				<input type="text" value="${record.dtUpload}" size="30" disabled>
 			</td>
 		</tr>
 	</c:if>
