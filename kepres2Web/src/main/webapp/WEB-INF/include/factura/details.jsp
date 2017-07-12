@@ -102,7 +102,6 @@
 			</c:if>
 		</td>
 	</tr>
-
 </table>
 </form:form>
 </div>
