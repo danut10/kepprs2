@@ -76,6 +76,8 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/download")
 	private String download(@RequestParam("id") Integer id) {
+		Atasament record = dao.read(id);
+		System.out.println(record.getDtUpload());
 		return "redirect: view?id=" + id;
 	}
 }
