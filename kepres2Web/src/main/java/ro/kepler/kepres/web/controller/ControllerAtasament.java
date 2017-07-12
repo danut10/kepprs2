@@ -1,6 +1,13 @@
 package ro.kepler.kepres.web.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -75,9 +82,14 @@ public class ControllerAtasament {
 	}		
 	
 	@RequestMapping("/download")
-	private String download(@RequestParam("id") Integer id) {
+	private String download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
-		System.out.println(record.getDtUpload());
+		if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
+			response.setContentType("application/pdf");
+			response.addHeader("Content-Disposition", "attachment; filename=Kepres2.sql");
+			Files.copy(new File("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql").toPath(), response.getOutputStream());
+            response.getOutputStream().flush();
+		}
 		return "redirect: view?id=" + id;
 	}
 }
