@@ -3,7 +3,6 @@ package ro.kepler.kepres.web.controller;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -83,7 +82,15 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/download")
 	private String download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
-		Atasament record = dao.read(id);
+		/*Atasament record = dao.read(id);
+		if(Files.exists(Paths.get(record.getUrl()))) {
+			response.setContentType(record.getTipFisier().toString());
+			//response.addHeader(arg0, arg1);
+			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
+			response.getOutputStream().flush();
+		}*/
+		
+		
 		if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
 			response.setContentType("application/pdf");
 			response.addHeader("Content-Disposition", "attachment; filename=Kepres2.sql");

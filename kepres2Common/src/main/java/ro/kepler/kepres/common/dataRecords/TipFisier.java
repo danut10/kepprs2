@@ -14,5 +14,10 @@ public class TipFisier {
 	
 	public String getExtensii() { return extensii; }
 	public void setExtensii(String extensii) { this.extensii = extensii; }
+	
+	@Override
+	public String toString() {
+		return "TipFisier [id=" + id + ", nume=" + nume + ", extensii=" + extensii + "]";
+	}
 
 }
