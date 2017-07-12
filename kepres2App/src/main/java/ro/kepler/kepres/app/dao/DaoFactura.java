@@ -1,53 +1,18 @@
 package ro.kepler.kepres.app.dao;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.apache.ibatis.annotations.Param;
 
-import ro.kepler.kepres.common.dataRecords.Angajat;
 import ro.kepler.kepres.common.dataRecords.Factura;
 
-@Component
-public class DaoFactura {
-	
-	private Hashtable<Integer, Factura> tabela;
-	private Integer lastId = 3;
-	
-	public DaoFactura() {
-		tabela = new Hashtable<>();
-		tabela.put(1, new Factura().setId(1).setSerie("AAA").setNumar(123).setDtEmitere(null).setDtScadenta(null).setSuma(2132).setTva(0.09).setDraft(true).setAngajat(new Angajat().setNume("vasile")));
-		tabela.put(2, new Factura().setId(2).setSerie("BBB").setNumar(456).setDtEmitere(null).setDtScadenta(null).setSuma(2323.33).setTva(0.12).setDraft(true).setAngajat(new Angajat().setNume("gigel")));
-		tabela.put(3, new Factura().setId(3).setSerie("CCC").setNumar(789).setDtEmitere(null).setDtScadenta(null).setSuma(6545).setTva(0.24).setDraft(true).setAngajat(new Angajat().setNume("ionica")));
-		
-	}
-	
-	public List<Factura> readList() {
-		List<Factura> recordList = new ArrayList<Factura>(tabela.values());
-		return recordList;
-	}
-	
-	public Factura read(Integer id) {
-		Factura record = tabela.get(id);
-		return record;
-	}
 
-	public Integer create(Factura factura) {
-		Integer id = ++lastId;
-		factura.setId(id);
-		tabela.put(id, factura);
-		return id;
-	}
+public interface DaoFactura  {
 
-	public void delete(Integer id) {
-		tabela.remove(id);
-		
-	}
-
-	public void update(Factura factura) {
-		tabela.put(factura.getId(), factura);
-	}
-	
+	public List<Factura> readList();
+	public Factura read(@Param("id") Integer id);
+	public void delete(@Param("id") Integer id);
+	public void update(@Param("record") Factura record);
+	public void create(@Param("record") Factura record);
 
 }

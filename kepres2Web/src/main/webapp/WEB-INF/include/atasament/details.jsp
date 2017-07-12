@@ -29,6 +29,14 @@
 			</c:if>
 		</td>
 	</tr>
+	<c:if test="${screenStatus != 'add'}">
+		<tr>
+			<td>Data Upload</td>
+			<td>
+				<input type="date" value="${record.dtUpload}" disabled>
+			</td>
+		</tr>
+	</c:if>
 	<c:if test="${screenStatus == 'add'}">
 		<tr>
 			<td>Fisier</td>

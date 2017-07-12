@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import ro.kepler.kepres.app.dao.DaoAtasament;
+import ro.kepler.kepres.app.dao.DaoAtasament1;
 import ro.kepler.kepres.common.dataRecords.Atasament;
 
 @Controller
@@ -17,8 +19,9 @@ public class ControllerAtasament {
 	
 	private String viewname = "atasament";
 	
-	@Autowired
-	private DaoAtasament dao;
+	@SuppressWarnings("unused")
+	@Autowired private DaoAtasament1 dao1;
+	@Autowired private DaoAtasament dao;
 	
 	@RequestMapping("/list")
 	private String list(Model model) {
@@ -54,7 +57,8 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") Atasament atasament) {
-		Integer id = dao.create(atasament);
+		dao.create(atasament);
+		Integer id = atasament.getId();
 		return "redirect: view?id=" + id;
 	}		
 
@@ -72,33 +76,6 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/download")
 	private String download(@RequestParam("id") Integer id) {
-		System.out.println("Suntem in download");
 		return "redirect: view?id=" + id;
 	}
-	
-	/*@RequestMapping("/atasament/list")
-	private String list(Model model) {
-		try	{
-			List<Atasament> recordList = new ArrayList<>();
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Atasament a1 = new Atasament();
-			Date d1 = sdf.parse("21/12/2012");
-			a1.setTitlu("vasile");
-			a1.setDtUpload(d1);
-			recordList.add(a1);
-			
-			Atasament a2 = new Atasament();
-			Date d2 = sdf.parse("11/10/2017");
-			a2.setTitlu("ionel");
-			a2.setDtUpload(d2);
-			recordList.add(a2);
-	
-			model.addAttribute("recordList", recordList);
-		}
-		catch(Exception e) {
-			System.out.println(e);
-		}
-		return "atasament";
-	}*/
-
 }
