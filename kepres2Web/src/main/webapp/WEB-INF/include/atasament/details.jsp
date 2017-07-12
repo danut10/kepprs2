@@ -34,7 +34,7 @@
 		<tr>
 			<td>Data Upload</td>
 			<td>
-				<input type="text" value="${record.dtUpload}" size="30" disabled>
+				<fmt:formatDate type="both" value="${record.dtUpload}"/>
 			</td>
 		</tr>
 	</c:if>
