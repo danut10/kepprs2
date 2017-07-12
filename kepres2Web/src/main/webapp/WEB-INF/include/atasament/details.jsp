@@ -41,7 +41,7 @@
 		<tr>
 			<td>Fisier</td>
 			<td>
-				<input type="file" value="choosse file">
+				<input type="file" value="choose file">
 			</td>
 		</tr>			
 	</c:if>
