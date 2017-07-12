@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <div>
 <form:form id="frmDetails" modelAttribute="record" method="POST">
@@ -33,7 +34,8 @@
 		<td>Data Emitere</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.dtEmitere}" disabled>
+				<!-- <input type="text" value="${record.dtEmitere}" disabled> -->
+				<fmt:formatDate pattern = "dd-MM-yyyy" value = "${record.dtEmitere}" />
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="dtEmitere"/>
@@ -43,7 +45,9 @@
 		<td>Data Scadenta</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.dtScadenta}" disabled>
+				<!--  <input type="text" value="${record.dtScadenta}" disabled> -->
+				<fmt:formatDate pattern = "dd-MM-yyyy" value = "${record.dtScadenta}"/>
+				
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="dtScadenta"/>
