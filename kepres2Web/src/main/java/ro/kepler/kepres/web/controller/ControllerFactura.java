@@ -56,7 +56,8 @@ public class ControllerFactura {
 	
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") Factura factura) {
-		Integer id = dao.create(factura);
+		dao.create(factura);
+		Integer id = factura.getId();
 		return "redirect: view?id=" + id;
 	}		
 

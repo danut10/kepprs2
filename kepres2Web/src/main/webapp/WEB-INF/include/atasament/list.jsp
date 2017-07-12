@@ -7,6 +7,7 @@
 	<table border="1">
 		<tr>
 			<th align="left">Titlu atasament</th>
+	   		<th align="left">Data upload</th>
 	   		<th align="left">Memo</th>
 	 	</tr>
 	 	
@@ -14,6 +15,7 @@
 	 	<c:forEach var="atasament" items="${recordList}">
 	 	<tr>
 			<td align="left"><a href="view?id=${atasament.id}">${atasament.titlu}</a></td>
+			<td align="left">${atasament.dtUpload}</td>
 			<td align="left">${atasament.memo}</td>
 			
 		</tr>
