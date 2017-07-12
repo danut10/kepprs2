@@ -7,8 +7,8 @@ public class Factura {
 	private Integer id;
 	private String serie;
 	private Integer numar;
-	private String dtEmitere;
-	private String dtScadenta;
+	private Date dtEmitere;
+	private Date dtScadenta;
 	private double suma;
 	private double tva;
 	private double total;
@@ -25,11 +25,11 @@ public class Factura {
 	public Integer getNumar() { return numar; }
 	public Factura setNumar(Integer numar) { this.numar = numar; return this; }
 	
-	public String getDtEmitere() { return dtEmitere; }
-	public Factura setDtEmitere(String dtEmitere) { this.dtEmitere = dtEmitere; return this; }
+	public Date getDtEmitere() { return dtEmitere; }
+	public Factura setDtEmitere(Date dtEmitere) { this.dtEmitere = dtEmitere; return this; }
 	
-	public String getDtScadenta() { return dtScadenta; }
-	public Factura setDtScadenta(String dtScadenta) { this.dtScadenta = dtScadenta; return this; }
+	public Date getDtScadenta() { return dtScadenta; }
+	public Factura setDtScadenta(Date dtScadenta) { this.dtScadenta = dtScadenta; return this; }
 	
 	public double getSuma() { return suma; }
 	public Factura setSuma(double suma) { this.suma = suma; return this; }
