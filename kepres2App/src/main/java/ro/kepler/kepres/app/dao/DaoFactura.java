@@ -17,9 +17,9 @@ public class DaoFactura {
 	
 	public DaoFactura() {
 		tabela = new Hashtable<>();
-		tabela.put(1, new Factura().setId(1).setSerie("AAA").setNumar(123).setDtEmitere(null).setDtScadenta(null).setSuma(2132).setTva(0.09).setDraft(true).setAngajat(new Angajat().setNume("vasile")));
-		tabela.put(2, new Factura().setId(2).setSerie("BBB").setNumar(456).setDtEmitere(null).setDtScadenta(null).setSuma(2323.33).setTva(0.12).setDraft(true).setAngajat(new Angajat().setNume("gigel")));
-		tabela.put(3, new Factura().setId(3).setSerie("CCC").setNumar(789).setDtEmitere(null).setDtScadenta(null).setSuma(6545).setTva(0.24).setDraft(true).setAngajat(new Angajat().setNume("ionica")));
+		tabela.put(1, new Factura().setId(1).setSerie("AAA").setNumar(123).setDtEmitere(null).setDtScadenta(null).setSuma(2132).setTva(0.09).setDraft(true));
+		tabela.put(2, new Factura().setId(2).setSerie("BBB").setNumar(456).setDtEmitere(null).setDtScadenta(null).setSuma(2323.33).setTva(0.12).setDraft(true));
+		tabela.put(3, new Factura().setId(3).setSerie("CCC").setNumar(789).setDtEmitere(null).setDtScadenta(null).setSuma(6545).setTva(0.24).setDraft(true));
 		
 	}
 	
