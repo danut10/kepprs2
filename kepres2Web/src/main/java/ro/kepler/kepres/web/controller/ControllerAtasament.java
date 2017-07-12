@@ -17,8 +17,8 @@ public class ControllerAtasament {
 	
 	private String viewname = "atasament";
 	
-	@Autowired
-	private DaoAtasament dao;
+	@SuppressWarnings("unused")
+	@Autowired private DaoAtasament dao;
 	
 	@RequestMapping("/list")
 	private String list(Model model) {
@@ -54,6 +54,7 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") Atasament atasament) {
+		dao.create(atasament);
 		Integer id = dao.create(atasament);
 		return "redirect: view?id=" + id;
 	}		
