@@ -30,7 +30,7 @@
 			select SEQ_ATASAMENT.NEXTVAL from DUAL
 		</selectKey>
 		insert into ATASAMENT(ID, TITLU, MEMO, DTUPLOAD)
-		values (#{record.id}, #{record.titlu}, #{record.memo}, SYSDATE("dd-mm-yy") )
+		values (#{record.id}, #{record.titlu}, #{record.memo}, SYSDATE )
    </insert>
 
 </mapper>
