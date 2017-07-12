@@ -24,13 +24,3 @@
 	
 	</table>
 </div>
-<script>
-$(document).ready(function () {
-    $('span.date').each(function() { 
-        var dateFormat = $(this).text()
-        var dateFormat = $.datepicker.formatDate('yy/mm/dd', new Date(dateFormat));
-        //alert(dateFormat);
-        $(this).html(dateFormat + "<br>");
-    });
-});
-</script>
