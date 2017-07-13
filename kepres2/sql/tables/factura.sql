@@ -1,17 +1,17 @@
-DROP TABLE FACTURA;
+drop table FACTURA;
 
-CREATE TABLE FACTURA
+create table FACTURA
 (
-	  ID number(*, 0) not null 
+	  ID number(10, 0) not null 
 	, SERIE nvarchar2(5) not null
-	, NUMAR decimal(10, 2)
-	, DTEMITERE date 
-	, DTSCADENTA date 
-	, SUMA decimal(10, 2) not null
-	, TVA decimal(3, 2) not null
-	, TOTAL decimal(10, 2) not null
-	, DRAFT int not null
-	, MEMO nvarchar2(100) 
+	, NUMAR nvarchar2(10) not null
+	, DT_EMITERE date 
+	, DT_SCADENTA date 
+	, SUMA decimal(10, 2) default 0 not null
+	, TVA decimal(10, 2) default 0 not null
+	, TOTAL decimal(10, 2) default 0 not null
+	, DRAFT number(1, 0) default 1 not null 
+	, MEMO nvarchar2(500) 
 	, constraint PK_FACTURA primary key(ID)
 );
 
