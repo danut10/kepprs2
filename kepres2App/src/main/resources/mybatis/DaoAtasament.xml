@@ -5,7 +5,7 @@
 <mapper namespace="ro.kepler.kepres.app.dao.DaoAtasament">
 
 	<select id="readList" resultType="Atasament">
-		select * from ATASAMENT
+		select * from ATASAMENT order by DTUPLOAD DESC
 	</select>
 	
 	<select id="read" resultType="Atasament">
