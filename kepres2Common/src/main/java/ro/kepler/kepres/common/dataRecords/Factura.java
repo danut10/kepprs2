@@ -6,7 +6,7 @@ public class Factura {
 
 	private Integer id;
 	private String serie;
-	private Integer numar;
+	private String numar;
 	private Date dtEmitere;
 	private Date dtScadenta;
 	private double suma;
@@ -22,8 +22,8 @@ public class Factura {
 	public String getSerie() { return serie; }
 	public Factura setSerie(String serie) { this.serie = serie; return this; }
 	
-	public Integer getNumar() { return numar; }
-	public Factura setNumar(Integer numar) { this.numar = numar; return this; }
+	public String getNumar() { return numar; }
+	public Factura setNumar(String numar) { this.numar = numar; return this; }
 	
 	public Date getDtEmitere() { return dtEmitere; }
 	public Factura setDtEmitere(Date dtEmitere) { this.dtEmitere = dtEmitere; return this; }
@@ -48,7 +48,4 @@ public class Factura {
 	
 	public Angajat getAngajat() { return angajat; }
 	public Factura setAngajat(Angajat angajat) { this.angajat = angajat; return this; }
-	
-	
-	
 }

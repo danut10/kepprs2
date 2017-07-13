@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ro.kepler.kepres.app.dao.DaoAtasament;
 import ro.kepler.kepres.app.dao.DaoAtasament1;
 import ro.kepler.kepres.common.dataRecords.Atasament;
+import ro.kepler.kepres.common.valueObjects.AppSettings;
 
 @Controller
 @RequestMapping("/atasament")
@@ -64,13 +65,9 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {	
-		String workingDirectory = System.getProperty("user.dir");
-		/*String relativeWebPath = "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql";
-		String workingDirectory = getServletContext().getRealPath(relativeWebPath);*/
-		//File file = new File(ServletContext.getRealPath("/someFolder/myFile.txt"));
-		//String workingDirectory = new File(".").getCanonicalPath();
-		atasament.setUrl(workingDirectory + "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql");
+	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
+		
+		atasament.setUrl("c:\\basedir");
 		
 		Date date = new Date();
 		atasament.setDtUpload(date);
