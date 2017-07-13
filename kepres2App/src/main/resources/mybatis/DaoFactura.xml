@@ -36,7 +36,7 @@
 		<selectKey keyProperty="record.id" resultType="int" order="BEFORE">
 			select SEQ_FACTURA.NEXTVAL from DUAL
 		</selectKey>
-		insert into FACTURA(ID, SERIE, NUMAR, DTEMITERE, DTSCADENTA, SUMA, TVA, TOTAL, DRAFT, MEMO)
+		insert into FACTURA(ID, SERIE, NUMAR, DT_EMITERE, DT_SCADENTA, SUMA, TVA, TOTAL, DRAFT, MEMO)
 		values (#{record.id}, #{record.serie}, #{record.numar}, to_date(#{record.dtEmitere},'DD.MM.YYYY'), to_date(#{record.dtScadenta},'DD.MM.YYYY'), #{record.suma}, #{record.tva}, #{record.total}, #{record.draft}, #{record.memo})
    </insert>
 
