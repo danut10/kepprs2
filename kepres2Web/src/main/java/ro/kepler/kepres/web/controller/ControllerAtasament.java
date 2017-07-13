@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -62,7 +63,13 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament) {
+	private String create(@ModelAttribute("record") Atasament atasament) {	
+		String workingDirectory = System.getProperty("user.dir");
+		atasament.setUrl(workingDirectory + "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql");
+		
+		Date date = new Date();
+		atasament.setDtUpload(date);
+
 		dao.create(atasament);
 		Integer id = atasament.getId();
 		return "redirect: view?id=" + id;
@@ -82,14 +89,14 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/download")
 	private String download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
-		/*Atasament record = dao.read(id);
-		if(Files.exists(Paths.get(record.getUrl()))) {
+		Atasament record = dao.read(id);
+		/*if(Files.exists(Paths.get(record.getUrl()))) {
 			response.setContentType(record.getTipFisier().toString());
 			//response.addHeader(arg0, arg1);
 			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
 			response.getOutputStream().flush();
 		}*/
-		
+		System.out.println(record.getUrl());
 		
 		if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
 			response.setContentType("application/pdf");
