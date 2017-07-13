@@ -16,10 +16,7 @@
 	 	<tr>
 			<td align="left"><a href="view?id=${atasament.id}">${atasament.titlu}</a></td>
 			<td align="left">
-				<fmt:formatDate type="both" value="${record.dtUpload}"/>
-				
-				<fmt:formatDate pattern = "dd-MM-yyyy" 
-         value = "${atasament.dtUpload}" />
+				<fmt:formatDate pattern = "dd-MM-yyyy" value = "${atasament.dtUpload}" />
 			</td>
 			<td align="left">${atasament.memo}</td>
 			
