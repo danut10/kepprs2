@@ -6,6 +6,7 @@
 
 <head>
 	<title>Atasamente</title>
+	<meta name="decorator" content="decorator-main">
 </head>
 
 <body>
