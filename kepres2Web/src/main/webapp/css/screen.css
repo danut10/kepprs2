@@ -1,0 +1,56 @@
+#divFilter 
+{
+	border: solid 1px silver;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+#divFilter td 
+{
+	padding: 3px;	
+} 
+
+#divTitle 
+{
+	margin-bottom: 10px;	
+	border-bottom: 3px double silver;
+	padding-bottom: 5px;
+}
+
+#divTitle table 
+{
+	width: 100%;
+	font-size: 16pt;
+	color: #0050a0;	
+}
+
+#divToolbar 
+{
+	margin-bottom: 10px;	
+	border-bottom: 1px solid silver;
+	padding-bottom: 10px;
+}
+
+.divList
+{
+	margin-bottom: 10px;		
+} 
+
+.divList table
+{
+	width: 100%;		
+} 
+
+.divList td
+{
+	border-bottom: 1px solid silver;	
+	padding-top: 2px;
+	padding-bottom: 1px;	
+} 
+
+.divList th
+{
+	border-bottom: 3px double silver;	
+	/* background-color: #eaeaea; */	
+} 

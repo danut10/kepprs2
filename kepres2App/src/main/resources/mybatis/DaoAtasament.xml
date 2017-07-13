@@ -5,7 +5,7 @@
 <mapper namespace="ro.kepler.kepres.app.dao.DaoAtasament">
 
 	<select id="readList" resultType="Atasament">
-		select * from ATASAMENT
+		select * from ATASAMENT order by DTUPLOAD DESC
 	</select>
 	
 	<select id="read" resultType="Atasament">
@@ -29,8 +29,8 @@
 		<selectKey keyProperty="record.id" resultType="int" order="BEFORE">
 			select SEQ_ATASAMENT.NEXTVAL from DUAL
 		</selectKey>
-		insert into ATASAMENT(ID, TITLU, MEMO)
-		values (#{record.id}, #{record.titlu}, #{record.memo})
+		insert into ATASAMENT(ID, TITLU, MEMO, DTUPLOAD, URL)
+		values (#{record.id}, #{record.titlu}, #{record.memo}, #{record.dtUpload}, #{record.url})
    </insert>
 
 </mapper>

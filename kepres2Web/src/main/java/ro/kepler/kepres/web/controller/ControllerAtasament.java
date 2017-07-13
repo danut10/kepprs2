@@ -1,7 +1,16 @@
 package ro.kepler.kepres.web.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,26 +65,47 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament) {
+	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
+		/*UUID uuid = UUID.randomUUID();*/
+		atasament.setUrl("c:\\basedir\\DataTree.java");
+		
+		Date date = new Date();
+		atasament.setDtUpload(date);
+
 		dao.create(atasament);
 		Integer id = atasament.getId();
-		return "redirect: view?id=" + id;
+		return "redirect:view?id=" + id;
 	}		
 
 	@RequestMapping("/update")
 	private String update(@ModelAttribute("record") Atasament atasament) {
 		dao.update(atasament);
-		return "redirect: view?id=" + atasament.getId();
+		return "redirect:view?id=" + atasament.getId();
 	}		
 
 	@RequestMapping("/delete")
 	private String delete(@RequestParam("id") Integer id) {
 		dao.delete(id);
-		return "redirect: list";
+		return "redirect:list";
 	}		
 	
 	@RequestMapping("/download")
-	private String download(@RequestParam("id") Integer id) {
-		return "redirect: view?id=" + id;
+	private void download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
+		Atasament record = dao.read(id);
+		if(Files.exists(Paths.get(record.getUrl()))) {
+			//response.setContentType(record.getTipFisier().toString());
+			response.setContentType("application/pdf");
+			response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
+			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
+			response.getOutputStream().flush();
+		}
+		System.out.println(record.getUrl());
+		
+		/*if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
+			//response.setContentType("application/pdf");
+			response.addHeader("Content-Disposition", "attachment; filename=Kepres2.sql");
+			Files.copy(new File("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql").toPath(), response.getOutputStream());
+            response.getOutputStream().flush();
+		}*/
 	}
 }
