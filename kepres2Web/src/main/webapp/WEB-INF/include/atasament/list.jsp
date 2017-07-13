@@ -18,6 +18,7 @@
 			<td align="left">
 				<fmt:formatDate pattern = "dd-MM-yyyy" value = "${atasament.dtUpload}" />
 			</td>
+			<td align="left">${atasament.memo}</td>
 			
 		</tr>
 		</c:forEach>

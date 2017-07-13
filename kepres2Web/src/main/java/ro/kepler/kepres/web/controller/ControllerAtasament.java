@@ -65,9 +65,10 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(HttpServletRequest request, @ModelAttribute("record") Atasament atasament) {	
-		String workingDirectory = System.getProperty("user.dir");
+	private String create(HttpServletRequest request, @ModelAttribute("record") Atasament atasament) throws IOException {	
+		//String workingDirectory = System.getProperty("user.dir");
 		//String workingDirectory = request.getServletContext().getRealPath("");
+		String workingDirectory = new File(".").getCanonicalPath();
 		atasament.setUrl(workingDirectory + "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql");
 		
 		Date date = new Date();
