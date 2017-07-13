@@ -34,23 +34,29 @@
 
 .divList
 {
-	margin-bottom: 10px;		
+	margin-bottom: 10px;	
+	font-family: sans-serif;	
 } 
 
 .divList table
 {
-	width: 100%;		
+	width: 100%;	
 } 
 
 .divList td
 {
 	border-bottom: 1px solid silver;	
-	padding-top: 2px;
-	padding-bottom: 1px;	
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 3px;	
 } 
 
 .divList th
 {
-	border-bottom: 3px double silver;	
+	border-bottom: 3px double silver;
+	font-weight: normal;
+	font-size: 13pt;	
+	padding-bottom: 5px;
+	padding-left: 3px;	
 	/* background-color: #eaeaea; */	
 } 
