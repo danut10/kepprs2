@@ -15,6 +15,7 @@
 	   		<th align="left">TVA</th>
 	   		<th align="left">Total</th>
 	   		<th align="left">Draft</th>
+	   		<th align="left">Responsabil</th>
 	   		<!-- <th align="left">Memo</th>  -->
 	   		<!-- <th align="left">Angajat</th> -->
 	   	
@@ -31,6 +32,7 @@
 			<td align="left">${factura.tva}</td>
 			<td align="left">${factura.total}</td>
 			<td align="left">${factura.draft}</td>
+			<td align="left">${factura.angajat.nume}</td>
 		<!--<td align="left">${factura.memo}</td> -->
 			<!--  <td align="left">${factura.angajat.nume}</td> -->
 		</tr>
