@@ -29,8 +29,8 @@
 		<selectKey keyProperty="record.id" resultType="int" order="BEFORE">
 			select SEQ_ATASAMENT.NEXTVAL from DUAL
 		</selectKey>
-		insert into ATASAMENT(ID, TITLU, MEMO, DTUPLOAD)
-		values (#{record.id}, #{record.titlu}, #{record.memo}, SYSDATE )
+		insert into ATASAMENT(ID, TITLU, MEMO, DTUPLOAD, URL)
+		values (#{record.id}, #{record.titlu}, #{record.memo}, #{record.dtUpload}, #{record.url})
    </insert>
 
 </mapper>
