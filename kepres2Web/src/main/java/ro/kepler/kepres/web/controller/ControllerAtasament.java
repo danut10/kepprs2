@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ro.kepler.kepres.app.dao.DaoAtasament;
 import ro.kepler.kepres.app.dao.DaoAtasament1;
 import ro.kepler.kepres.common.dataRecords.Atasament;
-import ro.kepler.kepres.common.valueObjects.AppSettings;
 
 @Controller
 @RequestMapping("/atasament")
@@ -66,15 +66,15 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
-		
-		atasament.setUrl("c:\\basedir");
+		/*UUID uuid = UUID.randomUUID();*/
+		atasament.setUrl("c:\\basedir\\DataTree.java");
 		
 		Date date = new Date();
 		atasament.setDtUpload(date);
 
 		dao.create(atasament);
 		Integer id = atasament.getId();
-		return "redirect: view?id=" + id;
+		return "redirect:view?id=" + id;
 	}		
 
 	@RequestMapping("/update")
@@ -90,7 +90,7 @@ public class ControllerAtasament {
 	}		
 	
 	@RequestMapping("/download")
-	private String download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
+	private void download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
 		if(Files.exists(Paths.get(record.getUrl()))) {
 			//response.setContentType(record.getTipFisier().toString());
@@ -107,7 +107,5 @@ public class ControllerAtasament {
 			Files.copy(new File("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql").toPath(), response.getOutputStream());
             response.getOutputStream().flush();
 		}*/
-		
-		return "redirect:view?id=" + id;
 	}
 }
