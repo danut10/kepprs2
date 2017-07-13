@@ -82,13 +82,13 @@ public class ControllerAtasament {
 	@RequestMapping("/update")
 	private String update(@ModelAttribute("record") Atasament atasament) {
 		dao.update(atasament);
-		return "redirect: view?id=" + atasament.getId();
+		return "redirect:view?id=" + atasament.getId();
 	}		
 
 	@RequestMapping("/delete")
 	private String delete(@RequestParam("id") Integer id) {
 		dao.delete(id);
-		return "redirect: list";
+		return "redirect:list";
 	}		
 	
 	@RequestMapping("/download")
@@ -110,6 +110,6 @@ public class ControllerAtasament {
             response.getOutputStream().flush();
 		}*/
 		
-		return "redirect: view?id=" + id;
+		return "redirect:view?id=" + id;
 	}
 }
