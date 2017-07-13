@@ -6,9 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FilenameUtils;
@@ -66,20 +65,16 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {	
-		String workingDirectory = System.getProperty("user.dir");
-		/*String relativeWebPath = "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql";
-		String workingDirectory = getServletContext().getRealPath(relativeWebPath);*/
-		//File file = new File(ServletContext.getRealPath("/someFolder/myFile.txt"));
-		//String workingDirectory = new File(".").getCanonicalPath();
-		atasament.setUrl(workingDirectory + "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql");
+	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
+		/*UUID uuid = UUID.randomUUID();*/
+		atasament.setUrl("c:\\basedir\\DataTree.java");
 		
 		Date date = new Date();
 		atasament.setDtUpload(date);
 
 		dao.create(atasament);
 		Integer id = atasament.getId();
-		return "redirect: view?id=" + id;
+		return "redirect:view?id=" + id;
 	}		
 
 	@RequestMapping("/update")
@@ -95,7 +90,7 @@ public class ControllerAtasament {
 	}		
 	
 	@RequestMapping("/download")
-	private String download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
+	private void download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
 		if(Files.exists(Paths.get(record.getUrl()))) {
 			//response.setContentType(record.getTipFisier().toString());
@@ -112,7 +107,5 @@ public class ControllerAtasament {
 			Files.copy(new File("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql").toPath(), response.getOutputStream());
             response.getOutputStream().flush();
 		}*/
-		
-		return "redirect:view?id=" + id;
 	}
 }
