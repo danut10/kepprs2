@@ -6,9 +6,9 @@
 
 	<table border="1">
 		<tr>
-			<th align="left">Titlu atasament</th>
-	   		<th align="left">Data upload</th>
-	   		<th align="left">Memo</th>
+			<th align="left">Data upload</th>
+			<th align="left">Titlu </th>
+	   		<th align="left">Url</th>
 	 	</tr>
 	 	
 
@@ -18,7 +18,7 @@
 			<td align="left">
 				<fmt:formatDate pattern = "dd.MM.yyyy" value = "${atasament.dtUpload}" />
 			</td>
-			<td align="left">${atasament.memo}</td>
+			<td align="left">${atasament.url}</td>
 			
 		</tr>
 		</c:forEach>
