@@ -10,6 +10,8 @@
 		<input type="button" value="Editare" onclick="window.location='edit?id=${record.id}'">
 		<input type="button" value="Stergere" onclick="window.location='delete?id=${record.id}'">
 		<input type="button" value="Lista" onclick="window.location='list'">
+		<input type="button" value="Emitere Factura" >
+		<input type="button" value="PDF" >
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">
