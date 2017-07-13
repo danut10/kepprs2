@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -65,10 +66,12 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(HttpServletRequest request, @ModelAttribute("record") Atasament atasament) throws IOException {	
-		//String workingDirectory = System.getProperty("user.dir");
-		//String workingDirectory = request.getServletContext().getRealPath("");
-		String workingDirectory = new File(".").getCanonicalPath();
+	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {	
+		String workingDirectory = System.getProperty("user.dir");
+		/*String relativeWebPath = "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql";
+		String workingDirectory = getServletContext().getRealPath(relativeWebPath);*/
+		//File file = new File(ServletContext.getRealPath("/someFolder/myFile.txt"));
+		//String workingDirectory = new File(".").getCanonicalPath();
 		atasament.setUrl(workingDirectory + "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql");
 		
 		Date date = new Date();

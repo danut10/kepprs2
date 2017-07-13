@@ -26,7 +26,7 @@
 				<textarea placeholder="${record.memo}" rows="10" cols="32" disabled></textarea>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
-				<form:textarea rows="10" cols="30" path="memo"/>
+				<form:textarea rows="10" cols="32" path="memo"/>
 			</c:if>
 		</td>
 	</tr>
