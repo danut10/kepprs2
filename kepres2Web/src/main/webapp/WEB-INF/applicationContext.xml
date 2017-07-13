@@ -18,5 +18,9 @@
 	</bean>
 	
 	<import resource="spring-mybatis.xml"/>	
+	
+	<bean id="appSettings" class="ro.kepler.kepres.common.valueObjects.AppSettings">
+		<property name="basedir" value="${settings.basedir}"/>
+	</bean>	
 
 </beans>
