@@ -7,8 +7,10 @@ import java.nio.file.Paths;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,8 +65,9 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament) {	
+	private String create(HttpServletRequest request, @ModelAttribute("record") Atasament atasament) {	
 		String workingDirectory = System.getProperty("user.dir");
+		//String workingDirectory = request.getServletContext().getRealPath("");
 		atasament.setUrl(workingDirectory + "\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql");
 		
 		Date date = new Date();
@@ -90,20 +93,22 @@ public class ControllerAtasament {
 	@RequestMapping("/download")
 	private String download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
-		/*if(Files.exists(Paths.get(record.getUrl()))) {
-			response.setContentType(record.getTipFisier().toString());
-			//response.addHeader(arg0, arg1);
+		if(Files.exists(Paths.get(record.getUrl()))) {
+			//response.setContentType(record.getTipFisier().toString());
+			response.setContentType("application/pdf");
+			response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
 			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
 			response.getOutputStream().flush();
-		}*/
+		}
 		System.out.println(record.getUrl());
 		
-		if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
-			response.setContentType("application/pdf");
+		/*if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
+			//response.setContentType("application/pdf");
 			response.addHeader("Content-Disposition", "attachment; filename=Kepres2.sql");
 			Files.copy(new File("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql").toPath(), response.getOutputStream());
             response.getOutputStream().flush();
-		}
+		}*/
+		
 		return "redirect: view?id=" + id;
 	}
 }
