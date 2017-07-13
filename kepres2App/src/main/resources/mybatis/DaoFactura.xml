@@ -4,11 +4,47 @@
 
 <mapper namespace="ro.kepler.kepres.app.dao.DaoFactura">
 
-	<select id="readList" resultType="Factura">
-		select * from FACTURA
+	<resultMap type="Factura" id="mapFactura">
+		
+		<id property="id" column="ID"/>
+		<result property="serie" column="SERIE"/>
+		<result property="numar" column="NUMAR"/>
+		<result property="dtEmitere" column="DT_EMITERE"/>
+		<result property="dtScadenta" column="DT_SCADENTA"/>
+		<result property="suma" column="SUMA"/>
+		<result property="tva" column="TVA"/>
+		<result property="total" column="TOTAL"/>
+		<result property="draft" column="DRAFT"/>
+		<result property="memo" column="MEMO"/>
+		<association property="angajat" javaType="Angajat">
+			<id property="id" column="ID_ANGAJAT" />
+			<result property="nume" column="NUME_ANGAJAT" />
+		</association>			
+			
+	</resultMap>
+	
+	<select id="readList" resultMap="mapFactura">
+		select 
+			  FACTURA.ID
+			, FACTURA.SERIE
+			, FACTURA.NUMAR
+			, FACTURA.DT_EMITERE
+			, FACTURA.DT_SCADENTA
+			, FACTURA.SUMA
+			, FACTURA.TVA
+			, FACTURA.TOTAL
+			, FACTURA.DRAFT
+			, FACTURA.MEMO
+			, ANGAJAT.ID as ID_ANGAJAT
+			, ANGAJAT.NUME as NUME_ANGAJAT
+		from 
+			FACTURA 
+			left join ANGAJAT on FACTURA.ID_ANGAJAT = ANGAJAT.ID
+		order by 
+			FACTURA.DT_EMITERE desc
 	</select>
 	
-	<select id="read" resultType="Factura">
+	<select id="read" resultMap="mapFactura">
 		select * from FACTURA where ID = #{id}
 	</select>
 	
