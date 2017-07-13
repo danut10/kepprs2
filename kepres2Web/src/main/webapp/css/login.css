@@ -1,0 +1,68 @@
+#divContainer
+{
+	padding: 5px;
+	margin: auto;
+	margin-top: 100px;
+	width: 500px;
+	background-color: white;
+	border: 1px solid #a9a9a9;
+	border-radius: 7px;	
+}
+
+
+
+#divHeader
+{
+	background-color: #0065a0;
+	color: white;
+	margin-bottom: 20px;
+}
+
+#divHeader table
+{
+	color: white;
+}
+
+#divBody
+{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#divBody td
+{
+	color: #0065a0; 
+	padding: 5px;
+}
+
+#divBody input[type=button]:hover, input[type=submit]:hover
+{
+	background-color: #0065a0; 
+	color: white;
+}
+
+#divBody input[type=button], input[type=submit]
+{
+	background-color: #eeeeee; 
+	color: #0065a0;
+}
+
+::-webkit-input-placeholder 
+{
+	font-size: 10pt;
+	font-style: italic;
+}
+
+::-moz-placeholder 
+{
+	font-size: 10pt;
+	font-style: italic;
+}
+
+#divFootnote
+{
+	margin-top: 5px;
+    text-align: center;
+    font-size: 10pt;
+    color: #707070;
+}
