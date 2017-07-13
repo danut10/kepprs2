@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ro.kepler.kepres.app.dao.DaoAtasament;
 import ro.kepler.kepres.app.dao.DaoAtasament1;
 import ro.kepler.kepres.common.dataRecords.Atasament;
-import ro.kepler.kepres.common.valueObjects.AppSettings;
 
 @Controller
 @RequestMapping("/atasament")
