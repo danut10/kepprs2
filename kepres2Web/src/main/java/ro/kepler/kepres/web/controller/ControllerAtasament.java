@@ -108,4 +108,10 @@ public class ControllerAtasament {
             response.getOutputStream().flush();
 		}*/
 	}
+	
+	@RequestMapping("/upload")
+	private String upload(Model model) {
+		model.addAttribute("url", "c:\\basedir\\DataTree.java");
+		return viewname;
+	}
 }
