@@ -1,0 +1,64 @@
+#divContainer
+{
+	margin: auto;
+	width: 1300px;
+	border: 1px solid #a9a9a9;
+	border-radius: 5px;
+	background-color: white;
+}
+
+#divHeader
+{
+	height: 60px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	border-bottom: solid 4px navy;
+	margin-left: 10px; margin-right: 10px;
+	
+}
+
+#divMenu
+{
+	float: left;
+	width: 200px;
+	min-height: 650px;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+#divBody
+{
+	float: right;
+	width: 1032px;
+	min-height: 650px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-right: 15px;
+	border-left: 1px solid #a9a9a9;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#divFooter
+{
+	clear: both;
+    height : 30px;
+    text-align: center;
+    font-size: 11pt;
+    color: #454545;
+    padding-top: 7px;
+    border-top: 1px solid #a9a9a9;
+    margin-left: 10px; margin-right: 10px;
+}
+
+#divFootnote
+{
+    text-align: center;
+    font-size: 10pt;
+    color: #707070;
+}
+
+
+
+
