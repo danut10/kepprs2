@@ -12,7 +12,7 @@ public class Factura {
 	private double suma;
 	private double tva;
 	private double total;
-	private int draft;
+	private boolean draft;
 	private String memo;
 	private Angajat angajat;
 	
@@ -40,8 +40,9 @@ public class Factura {
 	public double getTotal() { return total; }
 	public Factura setTotal(double total) { this.total = total; return this; }
 	
-	public int getDraft() { return draft; }
-	public Factura setDraft(int draft) { this.draft = draft; return this; }
+	
+	public boolean isDraft() { return draft; }
+	public Factura setDraft(boolean draft) { this.draft = draft; return this; }
 	
 	public String getMemo() { return memo; }
 	public Factura setMemo(String memo) { this.memo = memo; return this; }
