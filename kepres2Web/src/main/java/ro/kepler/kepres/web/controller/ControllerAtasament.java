@@ -14,9 +14,12 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import ro.kepler.kepres.app.dao.DaoAtasament;
 import ro.kepler.kepres.common.dataRecords.Atasament;
@@ -46,8 +49,9 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/add")
-	private String add(Model model) {
+	private String add(@ModelAttribute("url") String url, Model model) {
 		Atasament record = new Atasament();
+		record.setUrl(url);
 		model.addAttribute("record", record);
 		model.addAttribute("screenStatus", "add");
 		return viewname;
@@ -62,9 +66,9 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
+	private String create(@ModelAttribute("record") Atasament atasament, @ModelAttribute("url") String url) throws IOException {
 		/*UUID uuid = UUID.randomUUID();*/
-		atasament.setUrl("c:\\basedir\\DataTree.java");
+		atasament.setUrl(url);
 		
 		Date date = new Date();
 		atasament.setDtUpload(date);
@@ -91,12 +95,12 @@ public class ControllerAtasament {
 		Atasament record = dao.read(id);
 		if(Files.exists(Paths.get(record.getUrl()))) {
 			//response.setContentType(record.getTipFisier().toString());
-			response.setContentType("application/pdf");
-			response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
+			//response.setContentType("application/pdf");
+			response.addHeader("Content-Disposition", "attachment; filename=" + record.getTitlu() + ".txt");
+			//response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
 			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
 			response.getOutputStream().flush();
 		}
-		System.out.println(record.getUrl());
 		
 		/*if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
 			//response.setContentType("application/pdf");
@@ -108,7 +112,18 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/upload")
 	private String upload(Model model) {
-		model.addAttribute("url", "c:\\basedir\\DataTree.java");
+		Atasament record = new Atasament();
+		record.setUrl("c:\\basedir\\DataTree.java");
+		model.addAttribute("record", record);
+		model.addAttribute("screenStatus", "upload");
 		return viewname;
-	}
+	}	
+	
+	
+	@RequestMapping(value = "/uploadFile", headers = "content-type=multipart/*")
+	private String uploadFile(@RequestParam("file") MultipartFile file) {
+		System.out.println("sunt aici!");
+		return viewname;
+	}	
+	
 }

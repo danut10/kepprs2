@@ -12,13 +12,13 @@
 <body>
 	
 	<jsp:include page="/WEB-INF/include/atasament/toolbar.jsp"/>
+	<br>
  	<c:if test="${screenStatus == 'list'}">
 		<jsp:include page="/WEB-INF/include/atasament/list.jsp"/>
 	</c:if>
  	<c:if test="${screenStatus != 'list'}">
 		<jsp:include page="/WEB-INF/include/atasament/details.jsp"/>
 	</c:if>
-
 	
 </body>
 
