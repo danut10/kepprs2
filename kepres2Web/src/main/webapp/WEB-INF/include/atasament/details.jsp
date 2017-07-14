@@ -4,61 +4,43 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <div>
+
 <form:form id="frmDetails" modelAttribute="record" method="POST">
-<form:hidden path="id"/>
-<table>
-	<c:if test="${screenStatus != 'add'}">
+	<form:hidden path="id"/>
+	<table>
 		<tr>
 			<td>Data Upload</td>
 			<td>
-				<fmt:formatDate type="both" value="${record.dtUpload}"/>
+				<fmt:formatDate var="dtUpload" pattern="dd.MM.yyyy" value="${record.dtUpload}" />
+				<input type="text" value="${dtUpload}" disabled />
 			</td>
 		</tr>
-	</c:if>
-	<tr>
-		<td>Titlu</td>
-		<td>
-			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.titlu}" size="30" disabled>
-			</c:if>
-			<c:if test="${screenStatus != 'view'}">
-				<form:input path="titlu" size="30" />
-			</c:if>
-			
-		</td>
-	</tr>
-	<tr>
-		<td>Url</td>
-		<td>
-			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.url}" size="30" disabled>
-			</c:if>
-			<c:if test="${screenStatus != 'view'}">
-				<form:input path="url" size="30" />
-			</c:if>
-		</td>
-	</tr>
-	<c:if test="${screenStatus == 'add'}">
+		
 		<tr>
-			<td>Fisier</td>
+			<td>Titlu</td>
 			<td>
-				<input type="file" value="choose file"><br>
-				<input type="button" value="Upload" onclick="window.location='upload'">
+				<c:if test="${screenStatus == 'view'}"><input type="text" value="${record.titlu}" disabled></c:if>
+				<c:if test="${screenStatus != 'view'}"><form:input path="titlu" /></c:if>
 			</td>
-		</tr>			
-	</c:if>
-	<tr>
-		<td>Memo</td>
-	</tr>
-</table>
-
-	<p>
-		<c:if test="${screenStatus == 'view'}">
-			<textarea placeholder="${record.memo}" rows="10" cols="32" disabled></textarea>
-		</c:if>
-		<c:if test="${screenStatus != 'view'}">
-			<form:textarea rows="10" cols="38" path="memo"/>
-		</c:if>
-	</p>
+		</tr>
+		
+		<tr>
+			<td>Url</td>
+			<td><input type="text" value="${record.url}" disabled></td>
+		</tr>
+		
+		<tr>
+			<td>Memo</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<c:if test="${screenStatus == 'view'}"> <textarea disabled>${record.memo}</textarea></c:if>
+				<c:if test="${screenStatus != 'view'}"> <form:textarea path="memo"/></c:if>			
+			</td>
+		</tr>
+	
+	</table>
+	
 </form:form>
 </div>

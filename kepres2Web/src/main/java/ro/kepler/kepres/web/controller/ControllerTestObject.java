@@ -12,13 +12,11 @@ import ro.kepler.kepres.app.dao.DaoTestObject;
 import ro.kepler.kepres.common.dataRecords.TestObject;
 
 @Controller
-@RequestMapping("/TestObject")
+@RequestMapping("/testObject")
 public class ControllerTestObject {
 	
 	private String viewname = "testObject";
 	
-	
-	@SuppressWarnings("unused")
 	@Autowired private DaoTestObject dao;
 	
 	@RequestMapping("/view")
@@ -31,8 +29,7 @@ public class ControllerTestObject {
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") TestObject testObject) throws IOException {
 		dao.create(testObject);
-		Integer id = testObject.getId();
-		return "redirect:view?id=" + id;
+		return "redirect:view?id=" + testObject.getId();
 	}		
 
 	@RequestMapping("/update")
