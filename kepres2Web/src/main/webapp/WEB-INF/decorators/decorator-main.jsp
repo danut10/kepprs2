@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>
-			Magazin brazi
+			KepRes 2.0
 		</title>
 
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
