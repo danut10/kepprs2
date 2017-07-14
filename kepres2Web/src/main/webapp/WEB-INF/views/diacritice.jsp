@@ -5,18 +5,21 @@
 <html>
 
 <head>
-	<title>Facturi</title>
+	<title>Diacritice</title>
 </head>
 
 <body>
-	<jsp:include page="/WEB-INF/include/factura/toolbar.jsp"/>
-	<br>
+	
+		<jsp:include page="/WEB-INF/include/diacritice/toolbar.jsp"/>
  	<c:if test="${screenStatus == 'list'}">
-		<jsp:include page="/WEB-INF/include/factura/list.jsp"/>
+		<jsp:include page="/WEB-INF/include/diacritice/list.jsp"/>
 	</c:if>
  	<c:if test="${screenStatus != 'list'}">
-		<jsp:include page="/WEB-INF/include/factura/details.jsp"/>
+		<jsp:include page="/WEB-INF/include/diacritice/details.jsp"/>
 	</c:if>
+
+
+	
 </body>
 
 </html>

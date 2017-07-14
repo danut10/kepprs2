@@ -34,8 +34,8 @@
 		<td>Data Emitere</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<fmt:formatDate var="dtEmitere" value="${record.dtEmitere}" pattern="dd.MM.yyyy" />
-				<input type="text" value="${dtEmitere}" disabled>
+				<input type="text" value="${record.dtEmitere}" disabled>
+				<!-- <fmt:formatDate pattern = "dd-MM-yyyy" value = "${record.dtEmitere}" /> -->
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="dtEmitere"/>
@@ -88,7 +88,7 @@
 		<td>Draft</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.draft}" disabled>
+				<input type="checkbox" value="${record.draft}" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="draft"/>

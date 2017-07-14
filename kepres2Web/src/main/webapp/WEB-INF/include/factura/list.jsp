@@ -31,7 +31,7 @@
 			<td align="left">${factura.suma}</td>
 			<td align="left">${factura.tva}</td>
 			<td align="left">${factura.total}</td>
-			<td align="left">${factura.draft}</td>
+            <td align="left"><input type="checkbox" value="${factura.draft}"></td>
 			<td align="left">${factura.angajat.nume}</td>
 		<!--<td align="left">${factura.memo}</td> -->
 			<!--  <td align="left">${factura.angajat.nume}</td> -->

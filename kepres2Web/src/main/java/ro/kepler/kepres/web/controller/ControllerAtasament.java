@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ro.kepler.kepres.app.dao.DaoAtasament;
-import ro.kepler.kepres.app.dao.DaoAtasament1;
 import ro.kepler.kepres.common.dataRecords.Atasament;
 
 @Controller
@@ -28,8 +27,6 @@ public class ControllerAtasament {
 	
 	private String viewname = "atasament";
 	
-	@SuppressWarnings("unused")
-	@Autowired private DaoAtasament1 dao1;
 	@Autowired private DaoAtasament dao;
 	
 	@RequestMapping("/list")
@@ -107,5 +104,11 @@ public class ControllerAtasament {
 			Files.copy(new File("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql").toPath(), response.getOutputStream());
             response.getOutputStream().flush();
 		}*/
+	}
+	
+	@RequestMapping("/upload")
+	private String upload(Model model) {
+		model.addAttribute("url", "c:\\basedir\\DataTree.java");
+		return viewname;
 	}
 }

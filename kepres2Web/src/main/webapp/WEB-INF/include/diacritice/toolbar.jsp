@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-2" pageEncoding="ISO-8859-2"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div id="divToolbar">
+<div>
 	<c:if test="${screenStatus == 'list'}">
-		<button onclick="window.location='add'">
-			<img title="view" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/add.png">
-			<br>Adaugare
-		</button>
+		<input type="button" value="Adauga" onclick="window.location='add'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'view'}">
@@ -24,4 +21,5 @@
 		<input type="submit" value="Salvare" form="frmDetails" formaction="create">
 		<input type="button" value="Renuntare" onclick="window.location='list'">
 	</c:if>
+	
 </div>
