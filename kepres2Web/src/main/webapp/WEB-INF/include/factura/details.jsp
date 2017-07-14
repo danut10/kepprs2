@@ -75,6 +75,18 @@
 		</td>
 		</tr>
 		<tr>
+		<td>Moneda</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.moneda}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="moneda"/>
+			</c:if>
+			
+		</td>
+	</tr>
+		<tr>
 		<td>Draft</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">

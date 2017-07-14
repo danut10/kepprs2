@@ -24,6 +24,7 @@
 			<id property="id" column="ID_MONEDA" />
 			<result property="nume" column="NUME_MONEDA" />
 		</association>			
+			
 	</resultMap>
 	
 	<select id="readList" resultMap="mapFactura">

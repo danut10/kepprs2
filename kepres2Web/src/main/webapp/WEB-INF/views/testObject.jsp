@@ -14,7 +14,7 @@
 	<form:form id="frmDetails" modelAttribute="record" method="POST">
 		ID: <form:input path="id" />
 		<br>
-		Text é diacritice: 
+		Text diacritice: 
 		
 		<form:textarea rows="10" cols="38" path="text" />
 		
