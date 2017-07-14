@@ -4,8 +4,10 @@
 <div id="divToolbar">
 	<c:if test="${screenStatus == 'list'}">
 		<button onclick="window.location='add'">
-			<img title="view" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/add.png">
-			<br>Adaugare
+			<img title="view" src="${pageContext.request.contextPath}/img/actions/add.png">
+		</button>
+		<button>
+			<img title="filter" src="${pageContext.request.contextPath}/img/actions/view.png">
 		</button>
 	</c:if>
 	

@@ -3,21 +3,23 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <html>
-
 <head>
 	<title>Diacritice</title>
 </head>
 
 <body>
-	<input type="submit" value="Adauga" form="frmDetails" onclick="create">
+	<input type="submit" value="Adauga" form="frmDetails" formaction="create">
 	<input type="submit" value="Editeaza" form="frmDetails" formaction="update">
 	<br>
 	<form:form id="frmDetails" modelAttribute="record" method="POST">
 		ID: <form:input path="id" />
 		<br>
-		Text diacritice: 
-		<form:input path="diacritice" />
-		<input type="text" value="${record.diacritice}">
+		Text é diacritice: 
+		
+		<form:textarea rows="10" cols="38" path="text" />
+		
+		<textarea placeholder="${record.text}" rows="10" cols="32" ></textarea>
+		
 	</form:form>
 </body>
 
