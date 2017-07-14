@@ -3,7 +3,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <html>
-
 <head>
 	<title>Diacritice</title>
 </head>
@@ -16,8 +15,11 @@
 		ID: <form:input path="id" />
 		<br>
 		Text é diacritice: 
-		<form:input path="text" />
-		<input type="text" value="${record.text}">
+		
+		<form:textarea rows="10" cols="38" path="text" />
+		
+		<textarea placeholder="${record.text}" rows="10" cols="32" ></textarea>
+		
 	</form:form>
 </body>
 

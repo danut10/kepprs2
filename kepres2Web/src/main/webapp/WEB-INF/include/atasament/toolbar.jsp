@@ -3,7 +3,12 @@
 
 <div>
 	<c:if test="${screenStatus == 'list'}">
-		<input type="button" value="Adauga" onclick="window.location='add'">
+		<input type="button" value="Adauga" onclick="window.location='upload'">
+	</c:if>
+	
+	<c:if test="${screenStatus == 'upload' }">
+		<input type="submit" value="Salvare" form="frmDetails" formaction="add?url=${record.url}">
+		<input type="button" value="Renuntare" onclick="window.location='list'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'view'}">
@@ -19,7 +24,7 @@
 	</c:if>
 	
 	<c:if test="${screenStatus == 'add'}">
-		<input type="submit" value="Salvare" form="frmDetails" formaction="create">
+		<input type="submit" value="Salvare" form="frmDetails" formaction="create?url=${record.url}">
 		<input type="button" value="Renuntare" onclick="window.location='list'">
 	</c:if>
 	
