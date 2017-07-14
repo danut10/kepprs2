@@ -1,10 +1,13 @@
-DROP TABLE COTATVA;
+drop table COTATVA;
 
-CREATE TABLE COTATVA
+create table COTATVA
 (
-	  ID NUMBER(*, 0) NOT NULL
-	, COD NVARCHAR(5) NOT NULL
-	, NUME NVARCHAR(50) NOT NULL
-	, PROCENT DECIMAL(10, 2) NOT NULL
-	, CONSTRAINT PK_COTATVA PRIMARY KEY(ID)
+	  ID number(10, 0) not null
+	, COD nvarchar2(5) not null
+	, NUME nvarchar2(50) not null
+	, PROCENT decimal(10, 2) not null
+	, constraint PK_COTATVA primary key(ID)
 );
+
+drop sequence SEQ_COTATVA;
+create sequence SEQ_COTATVA;
