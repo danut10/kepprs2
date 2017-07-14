@@ -6,22 +6,22 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import ro.kepler.kepres.app.dao.DaoAtasament;
@@ -56,9 +56,13 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/add")
-	private String add(@ModelAttribute("url") String url, Model model) {
+	private String add(@ModelAttribute("url") String url, @ModelAttribute("date") String dateString, Model model) throws ParseException {
 		Atasament record = new Atasament();
 		record.setUrl(url);
+	    /*DateFormat df = new SimpleDateFormat("dd/MM/yy");
+	    Date date = df.parse(dateString);
+	    System.out.println(date);
+		//record.setDtUpload(new Date());*/
 		model.addAttribute("record", record);
 		model.addAttribute("screenStatus", "add");
 		return viewname;
@@ -77,13 +81,12 @@ public class ControllerAtasament {
 	 */
 	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament, @ModelAttribute("url") String url) throws IOException {
-		/*UUID uuid = UUID.randomUUID();*/
-		atasament.setUrl(url);
+	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
+		/**/
+		//atasament.setUrl(url);
 		
-		Date date = new Date();
-		atasament.setDtUpload(date);
-
+		atasament.setDtUpload(new Date());
+		System.out.println(atasament);
 		dao.create(atasament);
 		Integer id = atasament.getId();
 		return "redirect:view?id=" + id;
@@ -126,16 +129,20 @@ public class ControllerAtasament {
 	
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/upload", method=RequestMethod.POST)
-	private @ResponseBody String uploadPost(@RequestParam("nume") String nume, @RequestParam("filecontent") MultipartFile filecontent) throws IOException {
+	private String uploadPost(@RequestParam("filecontent") MultipartFile filecontent) throws IOException {
+		UUID uuid = UUID.randomUUID();
+		
 		String basedir = "c:\\basedir";
-		String filepath = "c:\\basedir\\file.txt";
+		String filepath = "c:\\basedir\\" + uuid.toString() + ".txt";
 		byte[] bytes = filecontent.getBytes();
 		
 		BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(filepath));
 		stream.write(bytes);
 		stream.close();
 		
-		return "Madalin rulz !!";
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy");
+		
+		return "redirect:add?url=" + filepath + "&date=" + df.format(new Date()) +"/";
 	}	
 	
 }
