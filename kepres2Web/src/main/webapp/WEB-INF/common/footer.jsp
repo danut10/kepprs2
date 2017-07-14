@@ -4,5 +4,5 @@
 
 Designed and buit by 
 <a href="http://www.kepler.ro" target="_blank">Kepler Rominfo</a>
-, June 2017 © All rights reserved.
+, 2017 - 2018 © All rights reserved.
 	

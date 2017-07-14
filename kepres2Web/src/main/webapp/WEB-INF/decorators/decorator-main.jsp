@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>
-			Magazin brazi
+			KepRes 2.0
 		</title>
 
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
@@ -23,7 +23,7 @@
 
 	<body>
 
-		<div id="divContainer" style="margin: auto; width: 1300px;">
+		<div id="divContainer">
 
 			<div id="divHeader"><jsp:include page="/WEB-INF/common/header.jsp"/></div>
 			<div id="divMenu"><jsp:include page="/WEB-INF/common/menu.jsp"/></div>
