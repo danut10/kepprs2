@@ -4,24 +4,14 @@
 
 <mapper namespace="ro.kepler.kepres.app.dao.DaoDiacritice">
 
-	<select id="readList" resultType="Diacritice">
-		select * from DIACRITICE
-	</select>
-	
 	<select id="read" resultType="Diacritice">
 		select * from DIACRITICE where ID = #{id}
 	</select>
 	
-	<delete id="delete">
-		delete from DIACRITICE where ID  = #{id}
-	</delete>
-	
 	<update id="update" parameterType="Diacritice">
 		update DIACRITICE
-     	set 
-     		  DIACRITICE = #{record.diacritice}
-		where 
-			ID = #{record.id}
+		set DIACRITICE = #{record.diacritice} 
+		where ID = #{record.id}
    </update>
    
    	<insert id="create" useGeneratedKeys="true" >
