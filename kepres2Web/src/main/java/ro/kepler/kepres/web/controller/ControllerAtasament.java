@@ -90,6 +90,7 @@ public class ControllerAtasament {
 		return "redirect:list";
 	}		
 	
+	
 	@RequestMapping("/download")
 	private void download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
