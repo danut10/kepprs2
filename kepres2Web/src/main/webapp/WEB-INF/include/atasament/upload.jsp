@@ -6,6 +6,5 @@
 <h1>Ecran upload</h1>
 <form method="POST" action="upload" enctype="multipart/form-data">
 	File to upload: <input type="file" name="filecontent"><br><br>
- 	Name: <input type="text" name="nume"><br><br>
 	<input type="submit" value="Upload"> Press here to upload the file!
 </form>	
