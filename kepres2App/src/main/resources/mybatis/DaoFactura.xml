@@ -20,28 +20,34 @@
 			<id property="id" column="ID_ANGAJAT" />
 			<result property="nume" column="NUME_ANGAJAT" />
 		</association>			
-			
+		<association property="moneda" javaType="Moneda">
+			<id property="id" column="ID_MONEDA" />
+			<result property="nume" column="NUME_MONEDA" />
+		</association>			
 	</resultMap>
 	
 	<select id="readList" resultMap="mapFactura">
 		select 
-			  FACTURA.ID
-			, FACTURA.SERIE
-			, FACTURA.NUMAR
-			, FACTURA.DT_EMITERE
-			, FACTURA.DT_SCADENTA
-			, FACTURA.SUMA
-			, FACTURA.TVA
-			, FACTURA.TOTAL
-			, FACTURA.DRAFT
-			, FACTURA.MEMO
-			, ANGAJAT.ID as ID_ANGAJAT
-			, ANGAJAT.NUME as NUME_ANGAJAT
+			  F.ID
+			, F.SERIE
+			, F.NUMAR
+			, F.DT_EMITERE
+			, F.DT_SCADENTA
+			, F.SUMA
+			, F.TVA
+			, F.TOTAL
+			, F.DRAFT
+			, F.MEMO
+			, A.ID as ID_ANGAJAT
+			, A.NUME as NUME_ANGAJAT
+			, M.ID as ID_MONEDA
+			, M.NUME as NUME_MONEDA
 		from 
-			FACTURA 
-			left join ANGAJAT on FACTURA.ID_ANGAJAT = ANGAJAT.ID
+			FACTURA F
+			left join ANGAJAT A on F.ID_ANGAJAT = A.ID 
+			left join MONEDA M on F.ID_MONEDA = M.ID
 		order by 
-			FACTURA.DT_EMITERE desc
+			F.DT_EMITERE desc
 	</select>
 	
 	<select id="read" resultMap="mapFactura">
