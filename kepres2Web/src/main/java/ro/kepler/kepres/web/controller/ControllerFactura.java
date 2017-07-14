@@ -1,5 +1,9 @@
 package ro.kepler.kepres.web.controller;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import ro.kepler.kepres.app.dao.DaoFactura;
 import ro.kepler.kepres.common.dataRecords.Factura;
@@ -71,5 +81,22 @@ public class ControllerFactura {
 	private String delete(@RequestParam("id") Integer id) {
 		dao.delete(id);
 		return "redirect: list";
-	}		
+	}
+	
+	@RequestMapping("/print")
+	private void print() {
+		 Document document = new Document();
+		 try {
+			PdfWriter.getInstance(document, new FileOutputStream(new File("C:/Users/intern/itext2.pdf")));
+			 document.open();
+	         Paragraph p = new Paragraph();
+	         p.add("This is my paragraph 1");
+	         p.setAlignment(Element.ALIGN_CENTER);
+	         document.add(p);
+	         document.close();
+	         
+		} catch (FileNotFoundException | DocumentException e) {
+            e.printStackTrace();
+	     }
+	}
 }
