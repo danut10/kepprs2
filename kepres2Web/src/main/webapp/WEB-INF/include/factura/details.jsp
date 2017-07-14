@@ -88,7 +88,7 @@
 		<td>Draft</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.draft}" disabled>
+				<input type="checkbox" value="${record.draft}" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="draft"/>
