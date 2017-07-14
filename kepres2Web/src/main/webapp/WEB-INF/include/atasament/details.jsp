@@ -5,60 +5,42 @@
 
 <div>
 
-<form:form id="frmDetails" modelAttribute="record" method="POST" enctype="multipart/form-data">
-<form:hidden path="id"/>
-
-<c:if test="${screenStatus != 'upload'}">
+<form:form id="frmDetails" modelAttribute="record" method="POST">
+	<form:hidden path="id"/>
 	<table>
-		<c:if test="${screenStatus != 'add'}">
-			<tr>
-				<td>Data Upload</td>
-				<td>
-					<!--<fmt:formatDate pattern="dd.MM.yyyy" value="${atasament.dtUpload}" /> -->
-					<input type="text" value="<fmt:formatDate type="both" pattern="dd.MM.yyyy" value="${record.dtUpload}"/>" size="30" disabled>
-				</td>
-			</tr>
-		</c:if>
+		<tr>
+			<td>Data Upload</td>
+			<td>
+				<fmt:formatDate var="dtUpload" pattern="dd.MM.yyyy" value="${record.dtUpload}" />
+				<input type="text" value="${dtUpload}" disabled />
+			</td>
+		</tr>
+		
 		<tr>
 			<td>Titlu</td>
 			<td>
-				<c:if test="${screenStatus == 'view'}">
-					<input type="text" value="${record.titlu}" size="30" disabled>
-				</c:if>
-				<c:if test="${screenStatus != 'view'}">
-					<form:input path="titlu" size="30" />
-				</c:if>
-				
+				<c:if test="${screenStatus == 'view'}"><input type="text" value="${record.titlu}" disabled></c:if>
+				<c:if test="${screenStatus != 'view'}"><form:input path="titlu" /></c:if>
 			</td>
 		</tr>
+		
 		<tr>
 			<td>Url</td>
-			<td>
-				<input type="text" value="${record.url}" size="30" disabled>
-			</td>
+			<td><input type="text" value="${record.url}" disabled></td>
 		</tr>
+		
 		<tr>
 			<td>Memo</td>
 		</tr>
-	</table>
-
-	<p>
-		<c:if test="${screenStatus == 'view'}">
-			<textarea placeholder="${record.memo}" rows="10" cols="45" disabled></textarea>
-		</c:if>
-		<c:if test="${screenStatus != 'view'}">
-			<form:textarea rows="10" cols="45" path="memo"/>
-		</c:if>
-	</p>
-</c:if>
-
-</form:form>
- 
-
-
-	<input type="file" name="file"><br> 
-	<input type="button" value="Upload" onclick="window.location='uploadFile'">
 		
-
-
+		<tr>
+			<td colspan="2">
+				<c:if test="${screenStatus == 'view'}"> <textarea disabled>${record.memo}</textarea></c:if>
+				<c:if test="${screenStatus != 'view'}"> <form:textarea path="memo"/></c:if>			
+			</td>
+		</tr>
+	
+	</table>
+	
+</form:form>
 </div>
