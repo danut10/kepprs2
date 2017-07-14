@@ -3,7 +3,7 @@
 
 <div>
 	<c:if test="${screenStatus == 'list'}">
-		<input type="button" value="Adauga" onclick="window.location='upload'">
+		<input type="button" value="Upload" onclick="window.location='upload'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'view'}">
