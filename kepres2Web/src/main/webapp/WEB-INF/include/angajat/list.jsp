@@ -3,12 +3,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <br>
-<div>
+<div class="divList">
 
-	<table border="1">
+	<table>
 		<tr>
 			<th align="left">Cod angajat</th>
 	   		<th align="left">Nume</th>
+	   		<th></th>
 	 	</tr>
 	 	
 
@@ -16,6 +17,11 @@
 	 	<tr>
 			<td align="left"><a href="view?id=${angajat.id}">${angajat.cod}</a></td>
 			<td align="left">${angajat.nume}</td>
+			<td align="right">
+				<img title="view" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/view.png"> &nbsp;
+				<img title="edit" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/edit.png"> &nbsp;
+				<img title="delete" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/delete.png">				
+			</td>
 		</tr>
 		</c:forEach>
 	
