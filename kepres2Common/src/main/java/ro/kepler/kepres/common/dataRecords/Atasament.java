@@ -32,6 +32,12 @@ public class Atasament {
 	public Angajat getAngajat() { return angajat; }
 	public Atasament setAngajat(Angajat angajat) { this.angajat = angajat; return this; }
 	
+	@Override
+	public String toString() {
+		return "Atasament [id=" + id + ", titlu=" + titlu + ", url=" + url + ", dtUpload=" + dtUpload + ", memo=" + memo
+				+ ", tipFisier=" + tipFisier + ", angajat=" + angajat + "]";
+	}
+	
 	
 	
 }
