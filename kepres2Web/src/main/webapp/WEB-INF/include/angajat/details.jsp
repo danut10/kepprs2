@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <div>
-
+<br>
 <form:form id="frmDetails" modelAttribute="record" method="POST">
 	<form:hidden path="id"/>
 	<table style="width=300px;">
