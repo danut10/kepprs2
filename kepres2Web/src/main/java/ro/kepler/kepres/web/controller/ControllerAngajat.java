@@ -17,8 +17,14 @@ import ro.kepler.kepres.common.dataRecords.Angajat;
 public class ControllerAngajat {
 	
 	private String viewname = "angajat";
+	private String screenTitle = "Angajați";
 	
 	@Autowired private DaoAngajat dao;
+	
+	@ModelAttribute
+	private void initModel(Model model) {
+		model.addAttribute("screenTitle", screenTitle);		
+	}
 	
 	@RequestMapping("/list")
 	private String list(Model model) {

@@ -9,13 +9,13 @@
 	KepRes 2.0
 </div>
 
-<div style=" float: right; text-align: right; margin-right: 2px; margin-left: 15px; margin-top: 5px;">
+<div style=" float: right; text-align: right; margin-right: 2px; margin-left: 15px; margin-top: 7px;">
 	<a href="#"><img src="${pageContext.request.contextPath}/img/flags/ro.jpg" width="25" height="18"></a>&nbsp;
 	<a href="#"><img src="${pageContext.request.contextPath}/img/flags/uk.jpg" width="25" height="18"></a>&nbsp;
 	<a href="#"><img src="${pageContext.request.contextPath}/img/flags/fr.jpg" width="25" height="18"></a>
 </div>
 
-<div style=" float: right; width: 400px; text-align: right; font-family: sans-serif; margin-top: 7px;">
+<div style=" float: right; width: 400px; text-align: right; font-family: sans-serif; margin-top: 9px;">
 	Guest user | <a href="${pageContext.request.contextPath}/mvc/login">Autentificare</a>
 </div>
 
