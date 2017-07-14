@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div>
+<div id="divToolbar">
 	<c:if test="${screenStatus == 'list'}">
-		<input type="button" value="Adauga" onclick="window.location='add'">
+		<button onclick="window.location='add'">
+			<img title="view" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/add.png">
+			<br>Adaugare
+		</button>
 	</c:if>
 	
 	<c:if test="${screenStatus == 'view'}">

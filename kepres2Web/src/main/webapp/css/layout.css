@@ -43,9 +43,8 @@
 	width: 1032px;
 	min-height: 650px;
 	padding-left: 15px;
-	padding-top: 10px;
-	padding-right: 15px;
-	border-left: 1px solid #aaaaaa;
+	padding-right: 5px;
+	border-left: 3px double #aaaaaa;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
