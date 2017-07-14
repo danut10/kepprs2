@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ro.kepler.kepres.app.dao.DaoAtasament;
-import ro.kepler.kepres.app.dao.DaoAtasament1;
 import ro.kepler.kepres.common.dataRecords.Atasament;
 
 @Controller
@@ -28,8 +27,6 @@ public class ControllerAtasament {
 	
 	private String viewname = "atasament";
 	
-	@SuppressWarnings("unused")
-	@Autowired private DaoAtasament1 dao1;
 	@Autowired private DaoAtasament dao;
 	
 	@RequestMapping("/list")
