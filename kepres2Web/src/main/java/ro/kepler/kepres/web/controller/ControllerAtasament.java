@@ -1,6 +1,8 @@
 package ro.kepler.kepres.web.controller;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -14,9 +16,13 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import ro.kepler.kepres.app.dao.DaoAtasament;
 import ro.kepler.kepres.common.dataRecords.Atasament;
@@ -28,6 +34,10 @@ public class ControllerAtasament {
 	private String viewname = "atasament";
 	
 	@Autowired private DaoAtasament dao;
+	
+	/*
+	 * statusuri ecran 
+	 */
 	
 	@RequestMapping("/list")
 	private String list(Model model) {
@@ -46,8 +56,9 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/add")
-	private String add(Model model) {
+	private String add(@ModelAttribute("url") String url, Model model) {
 		Atasament record = new Atasament();
+		record.setUrl(url);
 		model.addAttribute("record", record);
 		model.addAttribute("screenStatus", "add");
 		return viewname;
@@ -61,10 +72,14 @@ public class ControllerAtasament {
 		return viewname;
 	}	
 	
+	/*
+	 * operatii DB 
+	 */
+	
 	@RequestMapping("/create")
-	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
+	private String create(@ModelAttribute("record") Atasament atasament, @ModelAttribute("url") String url) throws IOException {
 		/*UUID uuid = UUID.randomUUID();*/
-		atasament.setUrl("c:\\basedir\\DataTree.java");
+		atasament.setUrl(url);
 		
 		Date date = new Date();
 		atasament.setDtUpload(date);
@@ -86,29 +101,41 @@ public class ControllerAtasament {
 		return "redirect:list";
 	}		
 	
+	/*
+	 * partea de upload / download
+	 */
+	
 	@RequestMapping("/download")
 	private void download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
 		if(Files.exists(Paths.get(record.getUrl()))) {
 			//response.setContentType(record.getTipFisier().toString());
-			response.setContentType("application/pdf");
-			response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
+			//response.setContentType("application/pdf");
+			response.addHeader("Content-Disposition", "attachment; filename=" + record.getTitlu() + ".txt");
+			//response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
 			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
 			response.getOutputStream().flush();
 		}
-		System.out.println(record.getUrl());
-		
-		/*if(Files.exists(Paths.get("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql"))) {
-			//response.setContentType("application/pdf");
-			response.addHeader("Content-Disposition", "attachment; filename=Kepres2.sql");
-			Files.copy(new File("C:\\Users\\intern\\workspace\\projects\\kepres2Web\\src\\main\\webapp\\WEB-INF\\downloads\\KEPRES2.sql").toPath(), response.getOutputStream());
-            response.getOutputStream().flush();
-		}*/
 	}
 	
-	@RequestMapping("/upload")
-	private String upload(Model model) {
-		model.addAttribute("url", "c:\\basedir\\DataTree.java");
+	@RequestMapping(value="/upload", method=RequestMethod.GET)
+	private String uploadGet(Model model) {
+		model.addAttribute("screenStatus", "upload");
 		return viewname;
-	}
+	}	
+	
+	@SuppressWarnings("unused")
+	@RequestMapping(value = "/upload", method=RequestMethod.POST)
+	private @ResponseBody String uploadPost(@RequestParam("nume") String nume, @RequestParam("filecontent") MultipartFile filecontent) throws IOException {
+		String basedir = "c:\\basedir";
+		String filepath = "c:\\basedir\\file.txt";
+		byte[] bytes = filecontent.getBytes();
+		
+		BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(filepath));
+		stream.write(bytes);
+		stream.close();
+		
+		return "Madalin rulz !!";
+	}	
+	
 }

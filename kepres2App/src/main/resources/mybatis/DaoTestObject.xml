@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ro.kepler.kepres.app.dao.DaoTestObject">
+
+	<select id="read" resultType="TestObject">
+		select * from TEST_OBJECT where ID = #{id}
+	</select>
+	
+	<update id="update" parameterType="TestObject">
+		update TEST_OBJECT
+		set TEXT = #{record.text} 
+		where ID = #{record.id}
+   </update>
+   
+   	<insert id="create" parameterType="TestObject">
+		insert into TEST_OBJECT(ID, TEXT)
+		values (#{record.id}, #{record.text})
+   </insert>
+
+</mapper>
