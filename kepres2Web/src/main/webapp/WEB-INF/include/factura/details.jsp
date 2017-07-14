@@ -7,6 +7,17 @@
 <form:form id="frmDetails" modelAttribute="record" method="POST">
 <form:hidden path="id"/>
 <table>
+<tr>
+		<td>Data Emitere</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+			 	<input type="text" value="<fmt:formatDate pattern = "dd.MM.yyyy" value = "${record.dtEmitere}" />" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="dtEmitere"/>
+			</c:if>
+		</td>
+		</tr>
 	<tr>
 		<td>Serie factura</td>
 		<td>
@@ -30,29 +41,6 @@
 			</c:if>
 		</td>
 	</tr>
-	<tr>
-		<td>Data Emitere</td>
-		<td>
-			<c:if test="${screenStatus == 'view'}">
-				<fmt:formatDate var="dtEmitere" value="${record.dtEmitere}" pattern="dd.MM.yyyy" />
-				<input type="text" value="${dtEmitere}" disabled>
-			</c:if>
-			<c:if test="${screenStatus != 'view'}">
-				<form:input path="dtEmitere"/>
-			</c:if>
-		</td>
-		<tr>
-		<td>Data Scadenta</td>
-		<td>
-			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.dtScadenta}" disabled> 
-				<!--<fmt:formatDate pattern = "dd-MM-yyyy" value = "${record.dtScadenta}"/> -->
-				
-			</c:if>
-			<c:if test="${screenStatus != 'view'}">
-				<form:input path="dtScadenta"/>
-			</c:if>
-		</td>
 		<tr>
 		<td>Suma</td>
 		<td>
@@ -74,6 +62,7 @@
 				<form:input path="tva"/>
 			</c:if>
 		</td>
+		</tr>
 		<tr>
 		<td>Total</td>
 		<td>
@@ -84,11 +73,12 @@
 				<form:input path="total"/>
 			</c:if>
 		</td>
+		</tr>
 		<tr>
 		<td>Draft</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.draft}" disabled>
+				<input type="checkbox" value="${record.draft}" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="draft"/>
@@ -96,17 +86,31 @@
 		</td>
 	</tr>
 	<tr>
-		<td>Memo</td>
+		<td>Data Scadenta</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.memo}" disabled>
+				<input type="text" value="<fmt:formatDate pattern = "dd.MM.yyyy" value = "${record.dtScadenta}" />" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
-				<form:input path="memo"/>
+				<form:input path="dtScadenta"/>
 			</c:if>
 		</td>
-	</tr>
-</table>
+		</tr>
+	<tr>
+		<td>Memo</td>
+			</tr>
+	</table>
+		<p>
+			<c:if test="${screenStatus == 'view'}">
+			<!-- <input type="text" value="${record.memo}" disabled> -->
+				<textarea placeholder="${record.memo}" rows="12" cols="37" disabled></textarea>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<!-- <form:input path="memo"/> -->
+				<form:textarea rows="12" cols="37" path="memo"/>
+			</c:if>
+		</p>
+
 </form:form>
 </div>
 

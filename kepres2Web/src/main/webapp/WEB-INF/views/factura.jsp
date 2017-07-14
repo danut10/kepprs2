@@ -10,6 +10,7 @@
 
 <body>
 	<jsp:include page="/WEB-INF/include/factura/toolbar.jsp"/>
+	<br>
  	<c:if test="${screenStatus == 'list'}">
 		<jsp:include page="/WEB-INF/include/factura/list.jsp"/>
 	</c:if>
