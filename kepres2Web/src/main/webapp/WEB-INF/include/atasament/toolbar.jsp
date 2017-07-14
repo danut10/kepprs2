@@ -6,11 +6,6 @@
 		<input type="button" value="Adauga" onclick="window.location='upload'">
 	</c:if>
 	
-	<c:if test="${screenStatus == 'upload' }">
-		<input type="submit" value="Salvare" form="frmDetails" formaction="add?url=${record.url}">
-		<input type="button" value="Renuntare" onclick="window.location='list'">
-	</c:if>
-	
 	<c:if test="${screenStatus == 'view'}">
 		<input type="button" value="Editare" onclick="window.location='edit?id=${record.id}'">
 		<input type="button" value="Stergere" onclick="window.location='delete?id=${record.id}'">
