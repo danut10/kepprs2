@@ -17,7 +17,6 @@
 	   		<th align="left">Draft</th>
 	   		<th align="left">Responsabil</th>
 	   		<!-- <th align="left">Memo</th>  -->
-	   		<!-- <th align="left">Angajat</th> -->
 	   	
 	 	</tr>
 	 	
@@ -26,15 +25,14 @@
 	 	<tr>
 			<td align="left"><a href="view?id=${factura.id}">${factura.serie}</a></td>
 			<td align="left">${factura.numar}</td>
-			<td align="left">${factura.dtEmitere}</td>
-			<td align="left">${factura.dtScadenta}</td>
+			<td align="left"><fmt:formatDate pattern = "dd.MM.yyyy" value = "${factura.dtEmitere}" /></td>
+			<td align="left"><fmt:formatDate pattern = "dd.MM.yyyy" value = "${factura.dtScadenta}" /></td>
 			<td align="left">${factura.suma}</td>
 			<td align="left">${factura.tva}</td>
 			<td align="left">${factura.total}</td>
             <td align="left"><input type="checkbox" value="${factura.draft}"></td>
 			<td align="left">${factura.angajat.nume}</td>
 		<!--<td align="left">${factura.memo}</td> -->
-			<!--  <td align="left">${factura.angajat.nume}</td> -->
 		</tr>
 		</c:forEach>
 	
