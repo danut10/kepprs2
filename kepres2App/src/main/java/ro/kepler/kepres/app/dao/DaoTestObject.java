@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import ro.kepler.kepres.common.dataRecords.TestObject;
 
-public interface DaoDiacritice  {
+public interface DaoTestObject  {
 
 	public List<TestObject> readList();
 	public TestObject read(@Param("id") Integer id);

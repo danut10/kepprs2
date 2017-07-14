@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ro.kepler.kepres.app.dao.DaoDiacritice;
+import ro.kepler.kepres.app.dao.DaoTestObject;
 import ro.kepler.kepres.common.dataRecords.TestObject;
 
 @Controller
-@RequestMapping("/diacritice")
+@RequestMapping("/TestObject")
 public class ControllerTestObject {
 	
 	private String viewname = "testObject";
 	
 	
 	@SuppressWarnings("unused")
-	@Autowired private DaoDiacritice dao;
+	@Autowired private DaoTestObject dao;
 	
 	@RequestMapping("/view")
 	private String view(@RequestParam("id") Integer id, Model model) {
