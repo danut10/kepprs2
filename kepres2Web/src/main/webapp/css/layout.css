@@ -2,20 +2,30 @@
 {
 	margin: auto;
 	width: 1300px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid #aaaaaa;
 	border-radius: 5px;
 	background-color: white;
+	padding-left: 10px; padding-right: 10px;
 }
 
 #divHeader
 {
-	height: 60px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 4px;
-	border-bottom: solid 4px navy;
-	margin-left: 10px; margin-right: 10px;
-	
+	/* height: 60px; */
+	/* border-bottom: solid 2px #0050a0; */
+	border-bottom: solid 2px black;
+	padding-top: 10px;
+	padding-bottom: 8px;
+}
+
+#divFooter
+{
+	clear: both;
+    height : 30px;
+    text-align: center;
+    font-size: 11pt;
+    color: #454545;
+    padding-top: 8px;
+    border-top: 1px solid #aaaaaa;
 }
 
 #divMenu
@@ -35,22 +45,12 @@
 	padding-left: 15px;
 	padding-top: 10px;
 	padding-right: 15px;
-	border-left: 1px solid #a9a9a9;
+	border-left: 1px solid #aaaaaa;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-#divFooter
-{
-	clear: both;
-    height : 30px;
-    text-align: center;
-    font-size: 11pt;
-    color: #454545;
-    padding-top: 7px;
-    border-top: 1px solid #a9a9a9;
-    margin-left: 10px; margin-right: 10px;
-}
+
 
 #divFootnote
 {
