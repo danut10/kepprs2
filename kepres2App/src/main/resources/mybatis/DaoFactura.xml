@@ -23,7 +23,7 @@
 		<association property="moneda" javaType="Moneda">
 			<id property="id" column="ID_MONEDA" />
 			<result property="nume" column="NUME_MONEDA" />
-		</association>
+		</association>			
 			
 	</resultMap>
 	
@@ -39,12 +39,14 @@
 			, F.TOTAL
 			, F.DRAFT
 			, F.MEMO
-			, ANGAJAT.ID as ID_ANGAJAT
-			, ANGAJAT.NUME as NUME_ANGAJAT
+			, A.ID as ID_ANGAJAT
+			, A.NUME as NUME_ANGAJAT
+			, M.ID as ID_MONEDA
+			, M.NUME as NUME_MONEDA
 		from 
 			FACTURA F
-			left join ANGAJAT on F.ID_ANGAJAT = ANGAJAT.ID
-			left join MONEDA on F.ID_MONEDA = MONEDA.ID
+			left join ANGAJAT A on F.ID_ANGAJAT = A.ID 
+			left join MONEDA M on F.ID_MONEDA = M.ID
 		order by 
 			F.DT_EMITERE desc
 	</select>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import ro.kepler.kepres.app.dao.DaoAngajat;
 import ro.kepler.kepres.common.dataRecords.Angajat;
+import ro.kepler.kepres.common.utils.Pager;
 
 @Controller
 @RequestMapping("/angajat")
@@ -31,6 +32,11 @@ public class ControllerAngajat {
 		List<Angajat> recordList = dao.readList();
 		model.addAttribute("recordList", recordList);
 		model.addAttribute("screenStatus", "list");
+		
+		Pager pager = new Pager().setRecordCount(200).setPageNo(14).setPageSize(10).setChapterSize(5);
+		pager.build();
+		model.addAttribute("pager", pager);
+		
 		return viewname;
 	}
 	
