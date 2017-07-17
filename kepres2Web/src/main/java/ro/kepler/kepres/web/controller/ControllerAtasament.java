@@ -107,7 +107,7 @@ public class ControllerAtasament {
 		if(Files.exists(Paths.get(record.getUrl()))) {
 			//response.setContentType(record.getTipFisier().toString());
 			//response.setContentType("application/pdf");
-			response.addHeader("Content-Disposition", "attachment; filename=" + record.getTitlu() + ".txt");
+			response.addHeader("Content-Disposition", "attachment; filename=" + record.getTitlu() + ".jpg");
 			//response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
 			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
 			response.getOutputStream().flush();
@@ -126,7 +126,7 @@ public class ControllerAtasament {
 		UUID uuid = UUID.randomUUID();
 		
 		String basedir = "c:\\basedir";
-		String filepath = "c:\\basedir\\" + uuid.toString() + ".txt";
+		String filepath = "c:\\basedir\\" + uuid.toString() + ".jpg";
 		byte[] bytes = filecontent.getBytes();
 		
 		BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(filepath));
