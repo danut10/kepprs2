@@ -13,12 +13,10 @@
 	<br>
 	<form:form id="frmDetails" modelAttribute="record" method="POST">
 		ID: <form:input path="id" />
-		<br>
-		Text diacritice: 
-		
-		<form:textarea rows="10" cols="38" path="text" />
-		
-		<textarea placeholder="${record.text}" rows="10" cols="32" ></textarea>
+		<br><br>
+		Text diacritice:<br> 
+		<form:textarea rows="10" cols="38" path="text" /><br>
+		<textarea rows="10" cols="32" disabled="disabled" >${record.text} </textarea>
 		
 	</form:form>
 </body>
