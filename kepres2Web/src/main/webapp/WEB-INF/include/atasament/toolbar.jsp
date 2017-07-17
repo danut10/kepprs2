@@ -12,6 +12,7 @@
 		<input type="button" value="Lista" onclick="window.location='list'">
 		<input type="button" value="Download" onclick="window.location='download?id=${record.id}'">
 		<input type="submit" value="Excel" form="frmDetails" formaction="print">
+		<input type="button" value="View" onclick="window.open('download?id=${record.id}')">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">

@@ -71,6 +71,8 @@
      		, TOTAL = #{record.total}
      		, DRAFT = #{record.draft}
      		, MEMO = #{record.memo}
+     		, ID_ANGAJAT = #{record.angajat.id}
+     		, ID_MONEDA = #{record.moneda.id}
 		where 
 			ID = #{record.id}
    </update>
@@ -79,8 +81,8 @@
 		<selectKey keyProperty="record.id" resultType="int" order="BEFORE">
 			select SEQ_FACTURA.NEXTVAL from DUAL
 		</selectKey>
-		insert into FACTURA(ID, SERIE, NUMAR, DT_EMITERE, DT_SCADENTA, SUMA, TVA, TOTAL, DRAFT, MEMO)
-		values (#{record.id}, #{record.serie}, #{record.numar}, to_date(#{record.dtEmitere},'DD.MM.YYYY'), to_date(#{record.dtScadenta},'DD.MM.YYYY'), #{record.suma}, #{record.tva}, #{record.total}, #{record.draft}, #{record.memo})
+		insert into FACTURA(ID, SERIE, NUMAR, DT_EMITERE, DT_SCADENTA, SUMA, TVA, TOTAL, DRAFT, MEMO, ID_ANGAJAT, ID_MONEDA)
+		values (#{record.id}, #{record.serie}, #{record.numar}, to_date(#{record.dtEmitere},'DD.MM.YYYY'), to_date(#{record.dtScadenta},'DD.MM.YYYY'), #{record.suma}, #{record.tva}, #{record.total}, #{record.draft}, #{record.memo}, #{record.angajat.id}, #{record.moneda.id})
    </insert>
 
 </mapper>
