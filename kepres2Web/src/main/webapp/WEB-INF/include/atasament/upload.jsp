@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <h1>Ecran upload</h1>
-<form method="POST" modelAttribute="record" action="upload" enctype="multipart/form-data">
+<form:form method="POST" modelAttribute="record" action="upload" enctype="multipart/form-data">
 	File to upload: <input type="file" name="filecontent"><br><br>
 	<input type="submit" value="Upload"> Press here to upload the file!
-</form>	
+</form:form>	
