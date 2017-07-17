@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ro.kepler.kepres.app.dao.DaoTestObject;
 import ro.kepler.kepres.common.dataRecords.TestObject;
 
+@SuppressWarnings("unused")
 @Controller
 @RequestMapping("/testObject")
 public class ControllerTestObject {
@@ -28,13 +29,13 @@ public class ControllerTestObject {
 		return viewname;
 	}	
 	
-	@RequestMapping(value = "/create", method = RequestMethod.GET)
+	@RequestMapping(value = "/create")
 	private String create(@ModelAttribute("record") TestObject testObject) throws IOException {
 		dao.create(testObject);
 		return "redirect:view?id=" + testObject.getId();
 	}		
 
-	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	@RequestMapping(value = "/update")
 	private String update(@ModelAttribute("record") TestObject testObject) {
 		dao.update(testObject);
 		return "redirect:view?id=" + testObject.getId();
