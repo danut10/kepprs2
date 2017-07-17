@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<br>
 <div class="divList">
 
 	<table>
@@ -16,7 +15,7 @@
 	 	<c:forEach var="angajat" items="${recordList}">
 	 	<tr>
 			<td align="left"><a href="view?id=${angajat.id}">${angajat.cod}</a></td>
-			<td align="left">${angajat.nume}</td>
+			<td align="left"><a href="view?id=${angajat.id}">${angajat.nume}</a></td>
 			<td align="right">
 				<img title="view" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/view.png"> &nbsp;
 				<img title="edit" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/edit.png"> &nbsp;
