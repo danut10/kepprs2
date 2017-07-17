@@ -6,9 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -22,6 +20,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import ro.kepler.kepres.app.dao.DaoAtasament;
@@ -56,11 +55,11 @@ public class ControllerAtasament {
 	}	
 	
 	@RequestMapping("/add")
-	private String add(@ModelAttribute("url") String url, Model model) throws ParseException {
+	private String add(Model model) throws ParseException {
 		Atasament record = new Atasament();
-		record.setUrl(url);
+		/*record.setUrl(url);
 	    Date date = new Date();
-		record.setDtUpload(date);
+		record.setDtUpload(date);*/
 		model.addAttribute("record", record);
 		model.addAttribute("screenStatus", "add");
 		return viewname;
@@ -81,7 +80,6 @@ public class ControllerAtasament {
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
 		atasament.setDtUpload(new Date());
-		System.out.println(atasament);
 		dao.create(atasament);
 		Integer id = atasament.getId();
 		return "redirect:view?id=" + id;
@@ -102,8 +100,9 @@ public class ControllerAtasament {
 	/*
 	 * partea de upload / download
 	 */
-	
+
 	@RequestMapping("/download")
+	@ResponseBody
 	private void download(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
 		if(Files.exists(Paths.get(record.getUrl()))) {
@@ -116,13 +115,6 @@ public class ControllerAtasament {
 		}
 	}
 	
-	@RequestMapping(value="/upload", method=RequestMethod.GET)
-	private String uploadGet(Model model) {
-		model.addAttribute("screenStatus", "upload");
-		return viewname;
-	}	
-	
-	@SuppressWarnings("unused")
 	@RequestMapping(value = "/upload", method=RequestMethod.POST)
 	private String uploadPost(@RequestParam("filecontent") MultipartFile filecontent) throws IOException {
 		UUID uuid = UUID.randomUUID();
@@ -135,7 +127,7 @@ public class ControllerAtasament {
 		stream.write(bytes);
 		stream.close();
 		
-		return "redirect:add?url=" + filepath + "/";
-	}	
+		return "redirect:add";
+	}
 	
 }
