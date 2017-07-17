@@ -1,10 +1,11 @@
 package ro.kepler.kepres.web.controller;
 
-import java.io.File;
+
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -84,16 +85,17 @@ public class ControllerFactura {
 	}
 	
 	@RequestMapping("/print")
-	private void print() {
+	private void print(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		 Document document = new Document();
 		 try {
-			PdfWriter.getInstance(document, new FileOutputStream(new File("C:/Users/intern/itext2.pdf")));
-			document.open();
-	        Paragraph p = new Paragraph();
-	        p.add("This is my paragraph 1");
-	        p.setAlignment(Element.ALIGN_CENTER);
-	        document.add(p);
-	        document.close();
+			    response.setContentType("application/pdf");
+				PdfWriter.getInstance(document, response.getOutputStream());
+				document.open();
+		        Paragraph p = new Paragraph();
+		        p.add("This is my paragraph 1");
+		        p.setAlignment(Element.ALIGN_CENTER);
+		        document.add(p);
+		        document.close();
 	         
 		} catch (FileNotFoundException | DocumentException e) {
             e.printStackTrace();
