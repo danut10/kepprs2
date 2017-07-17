@@ -59,10 +59,9 @@ public class ControllerAtasament {
 	private String add(@ModelAttribute("url") String url, @ModelAttribute("date") String dateString, Model model) throws ParseException {
 		Atasament record = new Atasament();
 		record.setUrl(url);
-	    /*DateFormat df = new SimpleDateFormat("dd/MM/yy");
+	    DateFormat df = new SimpleDateFormat("dd.MM.yy");
 	    Date date = df.parse(dateString);
-	    System.out.println(date);
-		//record.setDtUpload(new Date());*/
+		record.setDtUpload(date);
 		model.addAttribute("record", record);
 		model.addAttribute("screenStatus", "add");
 		return viewname;
@@ -82,11 +81,7 @@ public class ControllerAtasament {
 	
 	@RequestMapping("/create")
 	private String create(@ModelAttribute("record") Atasament atasament) throws IOException {
-		/**/
-		//atasament.setUrl(url);
-		
 		atasament.setDtUpload(new Date());
-		System.out.println(atasament);
 		dao.create(atasament);
 		Integer id = atasament.getId();
 		return "redirect:view?id=" + id;
@@ -140,7 +135,8 @@ public class ControllerAtasament {
 		stream.write(bytes);
 		stream.close();
 		
-		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy");
+		SimpleDateFormat df = new SimpleDateFormat("dd.MM.yy");
+		System.out.println(df.format(new Date()));
 		
 		return "redirect:add?url=" + filepath + "&date=" + df.format(new Date()) +"/";
 	}	
