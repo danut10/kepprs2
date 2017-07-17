@@ -88,12 +88,12 @@ public class ControllerFactura {
 		 Document document = new Document();
 		 try {
 			PdfWriter.getInstance(document, new FileOutputStream(new File("C:/Users/intern/itext2.pdf")));
-			 document.open();
-	         Paragraph p = new Paragraph();
-	         p.add("This is my paragraph 1");
-	         p.setAlignment(Element.ALIGN_CENTER);
-	         document.add(p);
-	         document.close();
+			document.open();
+	        Paragraph p = new Paragraph();
+	        p.add("This is my paragraph 1");
+	        p.setAlignment(Element.ALIGN_CENTER);
+	        document.add(p);
+	        document.close();
 	         
 		} catch (FileNotFoundException | DocumentException e) {
             e.printStackTrace();
