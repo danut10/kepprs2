@@ -105,8 +105,11 @@ public class ControllerFactura {
 				PdfWriter.getInstance(document, response.getOutputStream());
 				document.open();
 		        Paragraph p = new Paragraph();
-		        p.add(record.getNumar() + " "+record.getMemo());
-		        p.setAlignment(Element.ALIGN_CENTER);
+		        p.add("Data emitere: " + record.getDtEmitere()
+		        	  +"\n" + "Serie: "+ record.getSerie() 
+		              +"\n" + "Numar" + record.getNumar()
+		        );
+		        p.setAlignment(Element.ALIGN_LEFT);
 		        document.add(p);
 		        document.close();
 	         
