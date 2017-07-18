@@ -25,6 +25,7 @@
 	padding-top: 7px; 
 	padding-bottom: 5px;
 	background-color: #f8f8f8; 
+	margin-bottom: 15px;
 }
 
 #divFilter td 
@@ -34,23 +35,14 @@
 	padding-top: 5px;	
 } 
 
-
-
-
-.divList
-{
-	/* border: solid 1px black; */
-	margin-top: 15px;	
-	font-family: sans-serif;	
-} 
-
-.divList table
+.tblGrid
 {
 	width: 100%;	
-	border-collapse: collapse; 
+	border-collapse: collapse;
+	font-family: sans-serif;	 
 } 
 
-.divList td
+.tblGrid td
 {
 	border-bottom: 1px solid silver;	
 	padding-top: 4px;
@@ -58,7 +50,7 @@
 	padding-left: 3px;	
 } 
 
-.divList th
+.tblGrid th
 {
 	border-bottom: 3px double silver;
 	font-weight: normal;
