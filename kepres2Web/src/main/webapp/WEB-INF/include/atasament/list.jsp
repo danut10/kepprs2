@@ -15,11 +15,15 @@
 	 	<c:forEach var="atasament" items="${recordList}">
 		 	<tr>
 				<td align="left">
-					<fmt:formatDate pattern = "dd.MM.yyyy" value = "${atasament.dtUpload}" />
+					<a href="view?id=${atasament.id}"><fmt:formatDate pattern = "dd.MM.yyyy" value = "${atasament.dtUpload}" /></a>
 				</td>
 				<td align="left"><a href="view?id=${atasament.id}">${atasament.titlu}</a></td>
-				<td align="left">${atasament.url}</td>
-				
+				<td align="left"><a href="view?id=${atasament.id}">${atasament.url}</a></td>
+				<td align="right">
+					<img title="view" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/view.png"> &nbsp;
+					<img title="edit" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/edit.png"> &nbsp;
+					<img title="delete" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/delete.png">				
+				</td>	
 			</tr>
 		</c:forEach>
 	

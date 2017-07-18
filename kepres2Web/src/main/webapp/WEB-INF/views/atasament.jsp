@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	
+	<jsp:include page="/WEB-INF/include/atasament/title.jsp"/>
 	<jsp:include page="/WEB-INF/include/atasament/toolbar.jsp"/>
 	<br>
  	<c:if test="${screenStatus == 'list'}">
