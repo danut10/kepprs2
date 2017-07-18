@@ -38,12 +38,18 @@ import ro.kepler.kepres.common.dataRecords.Atasament;
 public class ControllerAtasament {
 	
 	private String viewname = "atasament";
+	private String screenTitle = "Ataşamente";
 	
 	@Autowired private DaoAtasament dao;
 	
 	/*
 	 * statusuri ecran 
 	 */
+	
+	@ModelAttribute
+	private void initModel(Model model) {
+		model.addAttribute("screenTitle", screenTitle);		
+	}
 	
 	@RequestMapping("/list")
 	private String list(Model model) {
