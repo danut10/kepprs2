@@ -8,7 +8,7 @@
 <form:hidden path="id"/>
 <table>
 <tr>
-		<td>Data Emitere</td>
+		 <td>Data Emitere</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
 			 	<input type="text" value="<fmt:formatDate pattern = "dd.MM.yyyy" value = "${record.dtEmitere}" />" disabled>
@@ -17,7 +17,7 @@
 				<form:input path="dtEmitere"/>
 			</c:if>
 		</td>
-		</tr>
+		</tr> 
 	<tr>
 		<td>Serie factura</td>
 		<td>
@@ -75,6 +75,18 @@
 		</td>
 		</tr>
 		<tr>
+		<td>Moneda</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.moneda.nume}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="moneda"/>
+			</c:if>
+			
+		</td>
+	</tr>
+		<tr>
 		<td>Draft</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
@@ -109,7 +121,7 @@
 				<!-- <form:input path="memo"/> -->
 				<form:textarea rows="12" cols="37" path="memo"/>
 			</c:if>
-		</p>
+		</p> 
 
 </form:form>
 </div>

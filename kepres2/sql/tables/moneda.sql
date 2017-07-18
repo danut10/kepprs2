@@ -1,11 +1,14 @@
-DROP TABLE MONEDA;
+drop table MONEDA;
 
-CREATE TABLE MONEDA
+create table MONEDA
 (
-	  ID NUMBER(*, 0) NOT NULL
-	, COD NVARCHAR(3) NOT NULL
-	, NUME NVARCHAR(50) NOT NULL
-	, IMPLICITA BOOLEAN NOT NULL
-	, REFERINTA BOOLEAN NOT NULL
-	, CONSTRAINT PK_MONEDA PRIMARY KEY(ID)
+	  ID number(10, 0) not null
+	, COD nvarchar2(3) not null
+	, NUME nvarchar2(50) not null
+	, IMPLICITA number(1,0) default 0 not null 
+	, REFERINTA number(1,0) default 0 not null 
+	, constraint PK_MONEDA primary key(ID)
 );
+
+drop sequence SEQ_MONEDA;
+create sequence SEQ_MONEDA;

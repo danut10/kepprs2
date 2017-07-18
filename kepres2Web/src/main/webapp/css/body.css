@@ -33,12 +33,14 @@ button {
     padding-bottom: 4px;
     padding-left: 12px; 
     padding-right: 10px; 
-    border-radius: 4px;	
+    border-radius: 3px;	
 }
 
 button:hover {
-	border-bottom-width: 3px;
+	/* border-bottom-width: 2px; */
 	border-color: black;
+	border-bottom-color: black;
+	background-color: #efefef;
 }
 
 a, a:ACTIVE, a:VISITED {

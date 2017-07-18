@@ -3,7 +3,7 @@
 
 <div>
 	<c:if test="${screenStatus == 'list'}">
-		<input type="button" value="Adauga" onclick="window.location='add'">
+		<input type="button" value="Upload" onclick="window.location='upload'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'view'}">
@@ -11,6 +11,8 @@
 		<input type="button" value="Stergere" onclick="window.location='delete?id=${record.id}'">
 		<input type="button" value="Lista" onclick="window.location='list'">
 		<input type="button" value="Download" onclick="window.location='download?id=${record.id}'">
+		<input type="submit" value="Excel" form="frmDetails" formaction="print">
+		<input type="button" value="View" onclick="window.open('download?id=${record.id}')">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">
@@ -19,7 +21,7 @@
 	</c:if>
 	
 	<c:if test="${screenStatus == 'add'}">
-		<input type="submit" value="Salvare" form="frmDetails" formaction="create">
+		<input type="submit" value="Salvare" form="frmDetails" formaction="create?url=${record.url}">
 		<input type="button" value="Renuntare" onclick="window.location='list'">
 	</c:if>
 	

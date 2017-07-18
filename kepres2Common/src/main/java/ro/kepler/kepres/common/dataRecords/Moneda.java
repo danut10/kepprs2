@@ -4,6 +4,7 @@ public class Moneda {
 
 	private Integer id;
 	private String cod;
+	private String nume;
 	private Boolean implicita;
 	private Boolean referinta;
 	
@@ -18,5 +19,8 @@ public class Moneda {
 	
 	public Boolean getReferinta() {	return referinta; }
 	public Moneda setReferinta(Boolean referinta) { this.referinta = referinta; return this; }
+	
+	public String getNume() { return nume; }
+	public Moneda setNume(String nume) { this.nume = nume; return this; }
 	
 }
