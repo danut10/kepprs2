@@ -6,9 +6,11 @@
 
 <head>
 	<title>Facturi</title>
+	<meta name="decorator" content="decorator-main">
 </head>
 
 <body>
+	<jsp:include page="/WEB-INF/include/factura/title.jsp"/>
 	<jsp:include page="/WEB-INF/include/factura/toolbar.jsp"/>
 	<br>
  	<c:if test="${screenStatus == 'list'}">

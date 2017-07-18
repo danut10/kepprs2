@@ -7,7 +7,7 @@
 	<br><a href="${pageContext.request.contextPath}/mvc/home">Home</a>
 	<br><br><a href="${pageContext.request.contextPath}/mvc/angajat/list">Angajati</a>
 	<br><br><a href="${pageContext.request.contextPath}/mvc/atasament/list">Atasament</a>
-	
+	<br><br><a href="${pageContext.request.contextPath}/mvc/factura/list">Facturi</a>	
 </body>
 
 </html>
