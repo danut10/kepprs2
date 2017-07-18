@@ -11,7 +11,9 @@ create table FACTURA
 	, TVA decimal(10, 2) default 0 not null
 	, TOTAL decimal(10, 2) default 0 not null
 	, DRAFT number(1, 0) default 1 not null 
-	, MEMO nvarchar2(500) 
+	, MEMO nvarchar2(500)
+	, ID_ANGAJAT number(10,0) not null
+	, ID_MONEDA number(10,0) not null
 	, constraint PK_FACTURA primary key(ID)
 );
 
