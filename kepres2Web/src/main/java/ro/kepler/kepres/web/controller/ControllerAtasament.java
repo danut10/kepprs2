@@ -120,14 +120,14 @@ public class ControllerAtasament {
 		UUID uuid = UUID.randomUUID();
 		
 		String basedir = "c:\\basedir";
-		String filepath = "c:\\basedir\\" + uuid.toString() + ".txt";
+		String filepath = basedir + "\\" + uuid.toString() + ".txt";
 		byte[] bytes = filecontent.getBytes();
 		
 		BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(filepath));
 		stream.write(bytes);
 		stream.close();
 		
-		return "redirect:add";
+		return "redirect:list";
 	}
 	
 }

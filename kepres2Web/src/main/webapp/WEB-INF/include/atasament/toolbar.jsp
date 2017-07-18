@@ -3,24 +3,46 @@
 
 <div>
 	<c:if test="${screenStatus == 'list'}">
-		<input type="button" value="Adaugare" onclick="window.location='add'">
+		<button>
+			<img title="Filtrare" src="${pageContext.request.contextPath}/img/actions/search3.png">
+		</button>
+		<button>
+			<img title="Clear filter" src="${pageContext.request.contextPath}/img/actions/unsearch3.png">
+		</button>
+		<button onclick="window.location='add'">
+			<img title="Adaugare" src="${pageContext.request.contextPath}/img/actions/add.png">
+		</button>
 	</c:if>
 	
 	<c:if test="${screenStatus == 'view'}">
-		<input type="button" value="Editare" onclick="window.location='edit?id=${record.id}'">
-		<input type="button" value="Stergere" onclick="window.location='delete?id=${record.id}'">
-		<input type="button" value="Lista" onclick="window.location='list'">
+		<button onclick="window.location='edit?id=${record.id}'">
+			<img title="Editare" src="${pageContext.request.contextPath}/img/actions/edit.png">
+		</button>
+		<button onclick="window.location='delete?id=${record.id}'">
+			<img title="Stergere" src="${pageContext.request.contextPath}/img/actions/delete.png">
+		</button>
+		<button onclick="window.location='list'">
+			<img title="Back to list" src="${pageContext.request.contextPath}/img/actions/list2.png">
+		</button>
 		<input type="button" value="Download" onclick="window.location='download?id=${record.id}'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">
-		<input type="submit" value="Salvare" form="frmDetails" formaction="update">
-		<input type="button" value="Renuntare" onclick="window.location='view?id=${record.id}'">
+		<button title="Salvare" type="submit" form="frmDetails" formaction="update" >
+			<img src="${pageContext.request.contextPath}/img/actions/save.png">
+		</button>
+		<button title="Renuntare" onclick="window.location='view?id=${record.id}'">
+			<img src="${pageContext.request.contextPath}/img/actions/cancel.png">
+		</button>
 	</c:if>
 	
 	<c:if test="${screenStatus == 'add'}">
-		<input type="submit" value="Salvare" form="frmDetails" formaction="create?url=${record.url}">
-		<input type="button" value="Renuntare" onclick="window.location='list'">
+		<button title="Salvare" type="submit" form="frmDetails" formaction="create" >
+			<img src="${pageContext.request.contextPath}/img/actions/save.png">
+		</button>
+		<button onclick="window.location='list'">
+			<img title="Back to list" src="${pageContext.request.contextPath}/img/actions/list2.png">
+		</button>
 	</c:if>
 	
 </div>

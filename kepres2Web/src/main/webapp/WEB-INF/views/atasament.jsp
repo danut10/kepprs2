@@ -6,7 +6,7 @@
 
 <head>
 	<title>Atasamente</title>
-	<link rel="stylesheet" href="css/atasamente/style.css">
+	<meta name="decorator" content="decorator-main">
 </head>
 
 <body>

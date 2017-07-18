@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<div>
+<div class="divList">
 
-	<table border="1">
+	<table>
 		<tr>
 			<th align="left">Data upload</th>
 			<th align="left">Titlu </th>
