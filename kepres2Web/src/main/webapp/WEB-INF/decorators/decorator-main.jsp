@@ -9,10 +9,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/body.css">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/layout.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/screen.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/tabs.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/screen-layout.css">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery-ui/jquery-ui.min.css">
 				
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js"></script>	
@@ -31,7 +28,9 @@
 			<div id="divFooter"><jsp:include page="/WEB-INF/common/footer.jsp"/></div>
 
 		</div>
-			<div id="divFootnote" style="margin: auto;"><jsp:include page="/WEB-INF/common/footnote.jsp"/>
+		
+		<div id="divFootnote">
+			<jsp:include page="/WEB-INF/common/footnote.jsp"/>
 		</div>
 
 	</body>
