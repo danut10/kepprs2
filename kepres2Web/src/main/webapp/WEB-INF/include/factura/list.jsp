@@ -31,7 +31,7 @@
 			<td align="left"><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${factura.tva}" /></td>
 			<td align="left"><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${factura.total}" /></td>
 			<td align="left">${factura.moneda.nume}</td>
-            <td align="left"><input type="checkbox" value="${factura.draft}" disabled></td>
+            <td align="left"><input type="checkbox" value="${factura.draft}"></td>
 			<td align="left">${factura.angajat.nume}</td>
 			<td align="left"><fmt:formatDate pattern = "dd.MM.yyyy" value = "${factura.dtScadenta}" /></td>
 		<!--<td align="left">${factura.memo}</td> -->
