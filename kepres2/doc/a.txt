@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 hijuhol
 Test Test test
+=======
+hijuhol
+>>>>>>> branch 'george' of https://github.com/danut10/kepprs2.git
