@@ -16,7 +16,7 @@
  	<c:if test="${screenStatus == 'list'}">
 		<jsp:include page="/WEB-INF/include/atasament/list.jsp"/>
 	</c:if>
- 	<c:if test="${screenStatus == 'view' || screenStatus == 'add' || screenStatus == 'edit' }">
+ 	<c:if test="${screenStatus != 'list'}">
 		<jsp:include page="/WEB-INF/include/atasament/details.jsp"/>
 	</c:if>
 	 <c:if test="${screenStatus == 'add'}">
