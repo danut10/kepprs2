@@ -23,7 +23,7 @@
 			<br>Lista
 		</button>
 		<button onclick="window.location='print?id=${record.id}'">
-			<img title="Back to list" src="${pageContext.request.contextPath}/img/actions/list2.png">
+			<img title="Back to list" src="${pageContext.request.contextPath}/img/actions/print.png">
 			<br>Print
 		</button>
 	</c:if>
