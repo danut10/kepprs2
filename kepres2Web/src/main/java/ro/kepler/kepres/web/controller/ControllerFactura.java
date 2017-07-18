@@ -22,6 +22,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import ro.kepler.kepres.app.dao.DaoFactura;
 import ro.kepler.kepres.common.dataRecords.Factura;
+import ro.kepler.kepres.common.utils.Pager;
 
 
 @Controller
@@ -29,15 +30,26 @@ import ro.kepler.kepres.common.dataRecords.Factura;
 public class ControllerFactura {
 	
 	private String viewname = "factura";
+	private String screenTitle = "Facturi";
 	
 	@Autowired
 	private DaoFactura dao;
+	
+	@ModelAttribute
+	private void initModel(Model model) {
+		model.addAttribute("screenTitle", screenTitle);		
+	}
 	
 	@RequestMapping("/list")
 	private String list(Model model) {
 		List<Factura> recordList = dao.readList();
 		model.addAttribute("recordList", recordList);
 		model.addAttribute("screenStatus", "list");
+		
+		Pager pager = new Pager().setRecordCount(200).setPageNo(14).setPageSize(10).setChapterSize(5);
+		pager.build();
+		model.addAttribute("pager", pager);
+		
 		return viewname;
 	}
 	
