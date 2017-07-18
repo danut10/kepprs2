@@ -4,7 +4,7 @@
 
 <div>
 
-	<table border="1">
+	<table class="tblGrid">
 		<tr>
 		    
 		    <th align="left">Data emitere</th>
@@ -16,9 +16,7 @@
 	   		<th align="left">Moneda</th>
 	   		<th align="left">Draft</th>
 	   		<th align="left">Responsabil</th>
-	   		<th align="left">Data scadenta</th>
-	   		<!-- <th align="left">Memo</th>  -->
-	   	
+	   		<th align="left">Data scadenta</th>	   	
 	 	</tr>
 	 	
 
@@ -34,7 +32,11 @@
             <td align="left"><input type="checkbox" value="${factura.draft}" disabled></td>
 			<td align="left">${factura.angajat.nume}</td>
 			<td align="left"><fmt:formatDate pattern = "dd.MM.yyyy" value = "${factura.dtScadenta}" /></td>
-		<!--<td align="left">${factura.memo}</td> -->
+			<td align="right">
+				<img title="view" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/view.png"> &nbsp;
+				<img title="edit" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/edit.png"> &nbsp;
+				<img title="delete" style="cursor: pointer;" src="${pageContext.request.contextPath}/img/actions/delete.png">				
+			</td>
 		</tr>
 		</c:forEach>
 	
