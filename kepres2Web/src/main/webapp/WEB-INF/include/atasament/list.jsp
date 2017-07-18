@@ -4,7 +4,7 @@
 
 <div>
 
-	<table class="divList">
+	<table class="tblGrid">
 		<tr>
 			<th align="left">Data upload</th>
 			<th align="left">Titlu </th>
