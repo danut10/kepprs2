@@ -25,6 +25,8 @@
 			<img title="Back to list" src="${pageContext.request.contextPath}/img/actions/list2.png">
 		</button>
 		<input type="button" value="Download" onclick="window.location='download?id=${record.id}'">
+		<input type="button" value="Excel" onclick="window.location='excel?id=${record.id}'">
+		<input type="button" value="View" onclick="window.open('download?id=${record.id}')">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">

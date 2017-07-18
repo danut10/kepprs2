@@ -10,8 +10,7 @@
 		<input type="button" value="Editare" onclick="window.location='edit?id=${record.id}'">
 		<input type="button" value="Stergere" onclick="window.location='delete?id=${record.id}'">
 		<input type="button" value="Lista" onclick="window.location='list'">
-		<!-- <input type="button" value="Print" > -->
-		<input type="submit" value="Print" form="frmDetails" formaction="print">
+		<input type="submit" value="Print" onclick="window.location='print?id=${record.id}'">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">

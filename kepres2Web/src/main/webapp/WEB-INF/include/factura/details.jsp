@@ -45,7 +45,7 @@
 		<td>Suma</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.suma}" disabled>
+				<input type="text" value="<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${record.suma}" />" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="suma"/>
@@ -56,7 +56,7 @@
 		<td>Tva</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.tva}" disabled>
+				<input type="text" value="<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${record.tva}" />" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="tva"/>
@@ -67,7 +67,7 @@
 		<td>Total</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
-				<input type="text" value="${record.total}" disabled>
+				<input type="text" value="<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${record.total}" />" disabled>
 			</c:if>
 			<c:if test="${screenStatus != 'view'}">
 				<form:input path="total"/>
@@ -97,6 +97,20 @@
 			</c:if>
 		</td>
 	</tr>
+	
+	<tr>
+		<td>Responsabil</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.angajat.nume}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="angajat"/>
+			</c:if>
+			
+		</td>
+	</tr>
+	
 	<tr>
 		<td>Data Scadenta</td>
 		<td>
