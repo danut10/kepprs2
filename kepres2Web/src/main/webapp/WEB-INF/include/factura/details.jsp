@@ -99,6 +99,19 @@
 	</tr>
 	
 	<tr>
+		<td>Responsabil</td>
+		<td>
+			<c:if test="${screenStatus == 'view'}">
+				<input type="text" value="${record.angajat.nume}" disabled>
+			</c:if>
+			<c:if test="${screenStatus != 'view'}">
+				<form:input path="angajat"/>
+			</c:if>
+			
+		</td>
+	</tr>
+	
+	<tr>
 		<td>Data Scadenta</td>
 		<td>
 			<c:if test="${screenStatus == 'view'}">
