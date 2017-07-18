@@ -97,6 +97,7 @@
 			</c:if>
 		</td>
 	</tr>
+	
 	<tr>
 		<td>Data Scadenta</td>
 		<td>
