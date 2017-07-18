@@ -144,18 +144,24 @@ public class ControllerAtasament {
 				HSSFWorkbook workbook = new HSSFWorkbook();
 				HSSFSheet sheet = workbook.createSheet("TEST");
 				
-				Row rowHeading = sheet.createRow(0);
-				rowHeading.createCell(0).setCellValue("George");
-				rowHeading.createCell(1).setCellValue("Ciaus");
+				List<Atasament> recordList = dao.readList();
 				
-				for(int i = 0; i < 2; i++) {
+				Row rowHeading = sheet.createRow(0);
+				
+				for(int i = 0; i < recordList.size(); i++){
+				rowHeading = sheet.createRow(i);
+				rowHeading.createCell(i).setCellValue(recordList.get(i).getTitlu());
+				rowHeading.createCell(i).setCellValue(recordList.get(i).getDtUpload());
+				}
+				
+				for(int i = 0; i < recordList.size(); i++) {
 					CellStyle stylerowHeading = workbook.createCellStyle();
 					Font font = workbook.createFont();
 					font.setBold(true);
 					font.setFontName(HSSFFont.FONT_ARIAL);
 					font.setFontHeightInPoints((short) 11);
 					stylerowHeading.setFont(font);
-					rowHeading.getCell(i).setCellStyle(stylerowHeading);
+					//rowHeading.getCell(i).setCellStyle(stylerowHeading);
 					
 					//Salvare excel
 					
