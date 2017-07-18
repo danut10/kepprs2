@@ -148,10 +148,6 @@ public class ControllerAtasament {
 	private void open(HttpServletResponse response, @RequestParam("id") Integer id) throws IOException {
 		Atasament record = dao.read(id);
 		if(Files.exists(Paths.get(record.getUrl()))) {
-			//response.setContentType(record.getTipFisier().toString());
-			//response.setContentType("application/pdf");
-			//response.addHeader("Content-Disposition", "attachment; filename=" + record.getTitlu() + ".txt");
-			//response.addHeader("Content-Disposition", "attachment; filename=" + FilenameUtils.getBaseName(new File(record.getUrl()).getPath()));
 			Files.copy(new File(record.getUrl()).toPath(), response.getOutputStream());
 			response.getOutputStream().flush();
 		}
