@@ -1,5 +1,6 @@
 <<<<<<< HEAD
+hijuhol
 Test Test test
 =======
 hijuhol
->>>>>>> refs/remotes/origin/george
+>>>>>>> branch 'george' of https://github.com/danut10/kepprs2.git

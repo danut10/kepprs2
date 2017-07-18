@@ -19,7 +19,7 @@
  	<c:if test="${screenStatus == 'view' || screenStatus == 'add' || screenStatus == 'edit' }">
 		<jsp:include page="/WEB-INF/include/atasament/details.jsp"/>
 	</c:if>
-	 <c:if test="${screenStatus == 'upload'}">
+	 <c:if test="${screenStatus == 'add'}">
 		<jsp:include page="/WEB-INF/include/atasament/upload.jsp"/>
 	</c:if>
 	
