@@ -6,7 +6,7 @@
 <br>
 <form:form id="frmDetails" modelAttribute="record" method="POST">
 	<form:hidden path="id"/>
-	<table style="width=300px;">
+	<table class="tblForm">
 		<tr>
 			<td>Cod angajat</td>
 			<td>
