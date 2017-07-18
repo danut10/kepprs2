@@ -2,6 +2,7 @@ package ro.kepler.kepres.web.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,6 +14,12 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.poi.hssf.usermodel.HSSFFont;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -128,6 +135,40 @@ public class ControllerAtasament {
 		stream.close();
 		
 		return "redirect:add";
+	}
+	
+	@RequestMapping(value="/excel")
+	private String excel(@RequestParam("id") Integer id) throws IOException {
+			
+		
+				HSSFWorkbook workbook = new HSSFWorkbook();
+				HSSFSheet sheet = workbook.createSheet("TEST");
+				
+				List<Atasament> recordList = dao.readList();
+				
+				Row rowHeading = null;
+				for(int j = 0; j < recordList.size(); j++ ){
+					rowHeading = sheet.createRow(j);
+					rowHeading.createCell(0).setCellValue(recordList.get(j).getTitlu());
+					rowHeading.createCell(1).setCellValue(recordList.get(j).getMemo());
+				}
+				for(int i = 0; i < recordList.size(); i++) {
+					/*CellStyle stylerowHeading = workbook.createCellStyle();
+					Font font = workbook.createFont();
+					font.setBold(true);
+					font.setFontName(HSSFFont.FONT_ARIAL);
+					font.setFontHeightInPoints((short) 11);
+					stylerowHeading.setFont(font);
+					rowHeading.getCell(i).setCellStyle(stylerowHeading);
+					*/
+					//Salvare excel
+					
+					FileOutputStream out = new FileOutputStream(new File("c:\\test\\GEORGE.xls"));
+					workbook.write(out);
+					out.close();
+					workbook.close();
+					}
+				return "redirect:view?id=" + id;
 	}
 	
 }
