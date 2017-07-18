@@ -85,14 +85,15 @@ public class ControllerFactura {
 	}
 	
 	@RequestMapping("/print")
-	private void print(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	private void print(HttpServletRequest request, HttpServletResponse response, @RequestParam("id") Integer id) throws Exception {
 		 Document document = new Document();
 		 try {
+			 	Factura record = dao.read(id);
 			    response.setContentType("application/pdf");
 				PdfWriter.getInstance(document, response.getOutputStream());
 				document.open();
 		        Paragraph p = new Paragraph();
-		        p.add("This is my paragraph 1");
+		        p.add(record.getNumar() + " "+record.getMemo());
 		        p.setAlignment(Element.ALIGN_CENTER);
 		        document.add(p);
 		        document.close();
