@@ -153,7 +153,6 @@ public class ControllerAtasament {
 		}
 	}
 	
-	
 	@RequestMapping(value="/excel")
 	private String excel(@RequestParam("id") Integer id) throws IOException {
 			
