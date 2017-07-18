@@ -4,7 +4,7 @@
 
 <div>
 
-	<table border="1">
+	<table class="tblGrid">
 		<tr>
 		    
 		    <th align="left">Data emitere</th>
