@@ -146,30 +146,27 @@ public class ControllerAtasament {
 				
 				List<Atasament> recordList = dao.readList();
 				
-				Row rowHeading = sheet.createRow(0);
-				
-				for(int i = 0; i < recordList.size(); i++){
-				rowHeading = sheet.createRow(i);
-				rowHeading.createCell(i).setCellValue(recordList.get(i).getTitlu());
-				rowHeading.createCell(i).setCellValue(recordList.get(i).getDtUpload());
+				Row rowHeading = null;
+				for(int j = 0; j < recordList.size(); j++ ){
+					rowHeading = sheet.createRow(j);
+					rowHeading.createCell(0).setCellValue(recordList.get(j).getTitlu());
+					rowHeading.createCell(1).setCellValue(recordList.get(j).getMemo());
 				}
-				
 				for(int i = 0; i < recordList.size(); i++) {
-					CellStyle stylerowHeading = workbook.createCellStyle();
+					/*CellStyle stylerowHeading = workbook.createCellStyle();
 					Font font = workbook.createFont();
 					font.setBold(true);
 					font.setFontName(HSSFFont.FONT_ARIAL);
 					font.setFontHeightInPoints((short) 11);
 					stylerowHeading.setFont(font);
-					//rowHeading.getCell(i).setCellStyle(stylerowHeading);
-					
+					rowHeading.getCell(i).setCellStyle(stylerowHeading);
+					*/
 					//Salvare excel
 					
 					FileOutputStream out = new FileOutputStream(new File("c:\\test\\GEORGE.xls"));
 					workbook.write(out);
 					out.close();
 					workbook.close();
-					System.out.println("A B C D");
 					}
 				return "redirect:view?id=" + id;
 	}
