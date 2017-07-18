@@ -4,7 +4,8 @@
 
 <div>
 <br>
-<form:form id="frmDetails" modelAttribute="record" method="POST">
+<form:form id="frmDetails" modelAttribute="record">
+
 	<form:hidden path="id"/>
 	<table class="tblForm">
 		<tr>
