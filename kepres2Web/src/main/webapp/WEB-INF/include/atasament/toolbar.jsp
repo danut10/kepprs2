@@ -34,7 +34,7 @@
 			<br>Download
 		</button>
 		<input type="button" value="Excel" onclick="window.location='excel?id=${record.id}'">
-		<input type="button" value="View" onclick="window.open('download?id=${record.id}')">
+		<input type="button" value="View" onclick="window.open('open?id=${record.id}', '_self')">
 	</c:if>
 	
 	<c:if test="${screenStatus == 'edit'}">
